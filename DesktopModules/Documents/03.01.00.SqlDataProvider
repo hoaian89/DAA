@@ -1,0 +1,189 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Create Documents Table **/
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Documents]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	BEGIN
+		CREATE TABLE {databaseOwner}[{objectQualifier}Documents]
+		(
+		[ItemID] [int] NOT NULL IDENTITY(0, 1),
+		[ModuleID] [int] NOT NULL,
+		[CreatedByUser] [nvarchar] (100) NULL,
+		[CreatedDate] [datetime] NULL,
+		[URL] [nvarchar] (250) NULL,
+		[Title] [nvarchar] (150) NULL,
+		[Category] [nvarchar] (50) NULL
+		)
+
+		ALTER TABLE {databaseOwner}[{objectQualifier}Documents] ADD CONSTRAINT [PK_{objectQualifier}Documents] PRIMARY KEY NONCLUSTERED  ([ItemID])
+		CREATE NONCLUSTERED INDEX [IX_{objectQualifier}Documents] ON {databaseOwner}[{objectQualifier}Documents] ([ModuleID])
+
+		ALTER TABLE {databaseOwner}[{objectQualifier}Documents] WITH NOCHECK ADD
+		CONSTRAINT [FK_{objectQualifier}Documents_{objectQualifier}Modules] FOREIGN KEY ([ModuleID]) REFERENCES {databaseOwner}[{objectQualifier}Modules] ([ModuleID]) ON DELETE CASCADE NOT FOR REPLICATION
+	END
+GO
+
+
+/** Drop Existing Stored Procedures **/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}AddDocument]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}AddDocument
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}DeleteDocument]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}DeleteDocument
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}GetDocument]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}GetDocument
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}GetDocuments]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}GetDocuments
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}UpdateDocument]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}UpdateDocument
+GO
+
+
+/** Create Stored Procedures **/
+
+create procedure {databaseOwner}{objectQualifier}AddDocument
+
+	@ModuleId         int,
+	@Title            nvarchar(150),
+	@URL              nvarchar(250),
+	@UserName         nvarchar(100),
+	@Category         nvarchar(50)
+
+as
+
+insert into {objectQualifier}Documents (
+  ModuleId,
+  Title,
+  URL,
+  CreatedByUser,
+  CreatedDate,
+  Category
+)
+values (
+  @ModuleId,
+  @Title,
+  @URL,
+  @UserName,
+  getdate(),
+  @Category
+)
+
+select SCOPE_IDENTITY()
+
+GO
+
+
+create procedure {databaseOwner}{objectQualifier}DeleteDocument
+
+	@ItemId int
+
+as
+
+delete
+from {objectQualifier}Documents
+where  ItemId = @ItemId
+
+GO
+
+
+CREATE procedure {databaseOwner}{objectQualifier}GetDocument
+
+	@ItemId   int,
+	@ModuleId int
+
+as
+
+select	{objectQualifier}Documents.Itemid,
+		{objectQualifier}Documents.Moduleid,
+		{objectQualifier}Documents.Title,
+		'URL' = case when {objectQualifier}Files.FileName is null then {objectQualifier}Documents.URL else {objectQualifier}Files.Folder + {objectQualifier}Files.FileName end,
+		{objectQualifier}Documents.Category,
+		'CreatedByUser' = {objectQualifier}Users.FirstName + ' ' + {objectQualifier}Users.LastName,
+       {objectQualifier}Files.Size,
+       {objectQualifier}Files.ContentType,
+       {objectQualifier}Documents.CreatedDate,
+       {objectQualifier}UrlTracking.TrackClicks,
+       {objectQualifier}UrlTracking.NewWindow
+from {objectQualifier}Documents
+left outer join {objectQualifier}Users on {objectQualifier}Documents.CreatedByUser = {objectQualifier}Users.UserId
+left outer join {objectQualifier}UrlTracking on {objectQualifier}Documents.URL = {objectQualifier}UrlTracking.Url and {objectQualifier}UrlTracking.ModuleId = @ModuleID
+left outer join {objectQualifier}Files on {objectQualifier}Documents.URL = 'fileid=' +
+convert(varchar,{objectQualifier}Files.FileID)
+where  {objectQualifier}Documents.ItemId = @ItemId
+and    {objectQualifier}Documents.ModuleId = @ModuleId
+
+GO
+
+
+CREATE procedure {databaseOwner}{objectQualifier}GetDocuments
+
+	@ModuleId int,
+	@PortalId int
+
+as
+
+select {objectQualifier}Documents.ItemId,
+		{objectQualifier}Documents.Moduleid,
+       {objectQualifier}Documents.Title,
+       'URL' = case when {objectQualifier}Files.FileName is null then {objectQualifier}Documents.URL else {objectQualifier}Files.Folder + {objectQualifier}Files.FileName end,
+       'CreatedByUser' = {objectQualifier}Users.FirstName + ' ' + {objectQualifier}Users.LastName,
+       {objectQualifier}Documents.CreatedDate,
+       {objectQualifier}Documents.Category,
+       {objectQualifier}Files.Size,
+       {objectQualifier}UrlTracking.TrackClicks,
+       {objectQualifier}UrlTracking.NewWindow
+from {objectQualifier}Documents
+left outer join {objectQualifier}Users on {objectQualifier}Documents.CreatedByUser = {objectQualifier}Users.UserId
+left outer join {objectQualifier}Files on {objectQualifier}Documents.URL = 'fileid=' +
+convert(varchar,{objectQualifier}Files.FileID)
+left outer join {objectQualifier}UrlTracking on {objectQualifier}Documents.URL = {objectQualifier}UrlTracking.Url and {objectQualifier}UrlTracking.ModuleId = @ModuleID
+where  {objectQualifier}Documents.ModuleId = @ModuleId
+order by {objectQualifier}Documents.Title
+
+GO
+
+
+create procedure {databaseOwner}{objectQualifier}UpdateDocument
+
+	@ItemId           int,
+	@Title            nvarchar(150),
+	@URL              nvarchar(250),
+	@UserName         nvarchar(100),
+	@Category         nvarchar(50)
+
+as
+
+update {objectQualifier}Documents
+set    Title             = @Title,
+       URL               = @URL,
+       CreatedByUser     = @UserName,
+       CreatedDate       = getdate(),
+       Category          = @Category
+where  ItemId = @ItemId
+
+GO
+
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

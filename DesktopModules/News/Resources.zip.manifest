@@ -1,0 +1,56 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>EditRss.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>RssModule.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>Settings.ascx.resx</name>
+    </file>
+    <file>
+      <path>Transformations/</path>
+      <name>Default.xsl</name>
+    </file>
+    <file>
+      <path>Transformations/</path>
+      <name>Ticker.xsl</name>
+    </file>
+    <file>
+      <path>Transformations/</path>
+      <name>Ticker2.xsl</name>
+    </file>
+    <file>
+      <path>Transformations/</path>
+      <name>VScroll.xsl</name>
+    </file>
+    <file>
+      <path />
+      <name>EditRss.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>loadlater.js</name>
+    </file>
+    <file>
+      <path />
+      <name>module.css</name>
+    </file>
+    <file>
+      <path />
+      <name>RssModule.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Settings.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Uninstall.SqlDataProvider</name>
+    </file>
+  </files>
+</dotnetnuke>

@@ -1,0 +1,24 @@
+﻿ATTENTION: If you recieve a "Yellow Screen of Death" error indicating that a Code Sub-directory could not be found, this may correct that issue.
+
+In this version of the Reports Module, the module has been converted from an "App_Code-based" module to a pre-compiled module. If you upgraded from a previous version, the App_Code/Reports directory must be removed. The upgrade process should have emptied this folder, but due to some minor limitations, the directory itself cannot simply be removed. Please follow the steps below to remove the directory. Removing this directory is not mandatory, as your site should operate correctly if it is not removed. However, it is recommended you complete these steps to ensure no issues arise.
+
+1.	Open the web.config file
+
+2.	Remove the entire line:
+		'<add directoryName="Reports" />' 
+	from the area between 
+		'<codeSubDirectories>' 
+	and 
+		'</codeSubDirectories>'
+		
+	For example, if your web.config contains the following:
+		<codeSubDirectories>
+			<add directoryName="HTML" />
+			<add directoryName="Reports" />
+		</codeSubDirectories>
+	After this process, this section should contain the following:
+		<codeSubDirectories>
+			<add directoryName="HTML" />
+		</codeSubDirectories>
+
+3. Delete the folder App_Code/Reports

@@ -1,0 +1,40 @@
+﻿if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_SearchTutorials]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_SearchTutorials]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Help_SearchTutorials]
+
+@Search nvarchar(100),
+@ModuleCategoryId int
+
+AS
+
+SELECT DISTINCT
+	{databaseOwner}{objectQualifier}Help_Tutorials.TutorialGUID, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.TutorialID, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.Title, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.ProductImage, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.Featured, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.KeyWords, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.DownloadName, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.ShortDesc, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.Archive, 
+	Description ='', 
+	0 AS ViewOrder
+FROM      {databaseOwner}{objectQualifier}Help_Tutorials INNER JOIN
+          {databaseOwner}{objectQualifier}Help_TutorialCategory ON {databaseOwner}{objectQualifier}Help_Tutorials.TutorialID = {databaseOwner}{objectQualifier}Help_TutorialCategory.TutorialID INNER JOIN
+          {databaseOwner}{objectQualifier}Help_Category ON {databaseOwner}{objectQualifier}Help_TutorialCategory.CategoryID = {databaseOwner}{objectQualifier}Help_Category.CategoryID
+WHERE     ({databaseOwner}{objectQualifier}Help_Category.ModuleID = @ModuleCategoryId AND {databaseOwner}{objectQualifier}Help_Category.Visible = 1)
+AND		
+	(
+	 ({databaseOwner}{objectQualifier}Help_Tutorials.Title LIKE N'%' + @Search + '%') OR 
+	 ({databaseOwner}{objectQualifier}Help_Tutorials.KeyWords LIKE N'%' + @Search + '%') OR 
+	 ({databaseOwner}{objectQualifier}Help_Tutorials.ShortDesc LIKE N'%' + @Search + '%') OR 
+	 ({databaseOwner}{objectQualifier}Help_Tutorials.Description LIKE N'%' + @Search + '%')
+	)
+
+GO
+
+
+

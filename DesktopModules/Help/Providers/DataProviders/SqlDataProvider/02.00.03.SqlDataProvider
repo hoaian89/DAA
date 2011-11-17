@@ -1,0 +1,123 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              Help               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+/* Insert here the code to create tables and stored procs   */
+
+ALTER PROCEDURE {databaseOwner}[{objectQualifier}Help_ListCategoryActiveByParent]
+
+@ModuleID int,
+@ParentID int
+	
+AS
+SELECT 		[CategoryID],
+			[CategoryGUID],
+			[Name],
+			[Description],
+			[Image],
+			[KeyWords],
+			[ModuleID],
+			[Order],
+			[Level],
+			[Parent],
+			[Visible],
+			[Deleted]
+
+FROM 		{databaseOwner}{objectQualifier}Help_Category
+
+WHERE		[Parent] = @ParentID AND [ModuleID] = @ModuleID
+AND			[Deleted] <> 1
+AND			[Visible] <> 0
+
+ORDER BY	[Level] ASC,
+			[Parent] ASC,
+			[Order] ASC
+			
+GO
+
+
+
+ALTER PROCEDURE {databaseOwner}[{objectQualifier}Help_AddTutorialFromImport]
+	@TutorialGUID uniqueidentifier,
+	@Title nvarchar(250),
+	@ModuleID int,
+	@ProductImage nvarchar(150),
+	@Featured bit,
+	@KeyWords nvarchar(200),
+	@DownloadName nvarchar(200),
+	@ShortDesc nvarchar(500),
+	@Archive bit,
+	@Description ntext
+
+As
+
+DECLARE @@RECORDCOUNT integer
+
+SELECT @@RECORDCOUNT=COUNT(TutorialID) FROM {databaseOwner}{objectQualifier}Help_Tutorials WHERE TutorialGUID=@TutorialGUID AND ModuleID = @ModuleID
+
+IF @@RECORDCOUNT>0 
+BEGIN
+
+UPDATE {databaseOwner}{objectQualifier}Help_Tutorials SET 
+    [Title]=@Title,
+    [ModuleID]=@ModuleID,
+	[ProductImage]=@ProductImage,
+	[Featured]=@Featured,
+	[KeyWords]=@KeyWords,
+	[DownloadName]=@DownloadName,
+	[ShortDesc]=@ShortDesc,
+	[Archive]=@Archive,
+	[Description]=@Description,
+	[LastUpdated]=GetDate()
+
+WHERE [TutorialGUID] = @TutorialGUID AND ModuleID = @ModuleID
+
+SELECT tutorialId FROM {databaseOwner}{objectQualifier}Help_Tutorials 
+WHERE [TutorialGUID] = @TutorialGUID AND ModuleID = @ModuleID
+
+END
+ELSE
+BEGIN
+
+INSERT INTO {databaseOwner}{objectQualifier}Help_Tutorials (
+	[Title],
+	[ModuleID],
+	[ProductImage],
+	[Featured],
+	[KeyWords],
+	[DownloadName],
+	[ShortDesc],
+	[Archive],
+	[Description],
+	[LastUpdated],
+	[TutorialGUID]
+) VALUES (
+	@Title,
+	@ModuleID,
+	@ProductImage,
+	@Featured,
+	@KeyWords,
+	@DownloadName,
+	@ShortDesc,
+	@Archive,
+	@Description,
+	GetDate(),
+	@TutorialGUID
+)
+
+SELECT @@identity
+
+END
+
+GO
+
+
+
+
+
+

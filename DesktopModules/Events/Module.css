@@ -1,0 +1,12 @@
+﻿/* ================================
+    CSS STYLES FOR DNN Event Module 
+   ================================
+
+See Themes Subdirectory for Creating Themes that will be loaded by the Module Instance Settings
+
+*/
+#Table1 {
+	width: 90%;
+	margin-left: 25px;
+	margin-right: 25px;
+}

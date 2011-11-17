@@ -1,0 +1,63 @@
+﻿if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_GetMaximumTutorialCategoryViewOrder]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}[{objectQualifier}Help_GetMaximumTutorialCategoryViewOrder]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Help_GetMaximumTutorialCategoryViewOrder]
+
+@CategoryId int
+
+AS
+
+DECLARE @ViewOrder AS INT
+
+SELECT     
+	@ViewOrder = MAX(ViewOrder)
+FROM         
+	{databaseOwner}{objectQualifier}Help_TutorialCategory
+WHERE     
+	(CategoryID = @CategoryId)
+
+IF @ViewOrder IS NULL
+	BEGIN
+		SET @ViewOrder = -1
+	END
+
+SELECT @ViewOrder
+
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_ListCategoryByParent]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}[{objectQualifier}Help_ListCategoryByParent]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Help_ListCategoryByParent]
+
+@ModuleID int,
+@ParentID int
+	
+AS
+SELECT 		[CategoryID],
+			[CategoryGUID],
+			[Name],
+			[Description],
+			[Image],
+			[KeyWords],
+			[ModuleID],
+			[Order],
+			[Level],
+			[Parent],
+			[Visible],
+			[Deleted]
+
+FROM 		{databaseOwner}{objectQualifier}Help_Category
+
+WHERE		[Parent] = @ParentID AND [ModuleID] = @ModuleID
+AND			[Deleted] <> 1
+
+ORDER BY	[Level] ASC,
+			[Parent] ASC,
+			[Order] ASC
+			
+GO
+

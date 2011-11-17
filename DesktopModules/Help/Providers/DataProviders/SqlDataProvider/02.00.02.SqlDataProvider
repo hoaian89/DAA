@@ -1,0 +1,34 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              Help               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+/* Insert here the code to create tables and stored procs   */
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Help_SearchTutorials]
+
+@Search nvarchar(100)
+
+AS
+
+SELECT     
+		{databaseOwner}{objectQualifier}Help_Tutorials.TutorialGUID, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.TutorialID, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Title, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.ProductImage, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Featured, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.KeyWords, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.DownloadName, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.ShortDesc, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Archive, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Description,
+        0 AS ViewOrder
+FROM	{databaseOwner}{objectQualifier}Help_Tutorials
+WHERE   ({databaseOwner}{objectQualifier}Help_Tutorials.Title LIKE N'%' + @Search + '%') OR 
+		({databaseOwner}{objectQualifier}Help_Tutorials.KeyWords LIKE N'%' + @Search + '%') OR 
+        ({databaseOwner}{objectQualifier}Help_Tutorials.ShortDesc LIKE N'%' + @Search + '%') OR 
+		({databaseOwner}{objectQualifier}Help_Tutorials.Description LIKE N'%' + @Search + '%')

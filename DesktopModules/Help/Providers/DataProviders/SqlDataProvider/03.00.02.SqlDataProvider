@@ -1,0 +1,325 @@
+﻿ALTER TABLE {databaseOwner}{objectQualifier}Help_Category ALTER COLUMN [Name] nvarchar(100)
+GO
+
+
+ALTER TABLE {databaseOwner}{objectQualifier}Help_Category ALTER COLUMN CategoryGUID nvarchar(100)
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Help_Tutorials ADD Visible bit
+GO
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_ListTutorialAlphabetical
+
+@CategoryID int
+
+AS
+
+SELECT     
+		{databaseOwner}{objectQualifier}Help_Tutorials.TutorialGUID, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.TutorialID, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Title, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.ProductImage, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Featured, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.KeyWords, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.DownloadName, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.ShortDesc, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Archive, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Description,
+        {databaseOwner}{objectQualifier}Help_TutorialCategory.ViewOrder
+FROM	{databaseOwner}{objectQualifier}Help_TutorialCategory INNER JOIN
+		{databaseOwner}{objectQualifier}Help_Tutorials ON 
+		{databaseOwner}{objectQualifier}Help_TutorialCategory.TutorialID = {databaseOwner}{objectQualifier}Help_Tutorials.TutorialID
+WHERE	({databaseOwner}{objectQualifier}Help_TutorialCategory.CategoryID = @CategoryID)
+ORDER BY {databaseOwner}{objectQualifier}Help_Tutorials.Title ASC
+
+GO
+
+
+
+EXEC sp_rename '{databaseOwner}{objectQualifier}Help_Category.Order', 'ViewOrder', 'COLUMN';
+
+GO
+
+
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}Help_ListCategoryByParent
+
+@ModuleID int,
+@ParentID int
+	
+AS
+SELECT 		[CategoryID],
+			[CategoryGUID],
+			[Name],
+			[Description],
+			[Image],
+			[KeyWords],
+			[ModuleID],
+			[ViewOrder],
+			[Level],
+			[Parent],
+			[Visible],
+			[Deleted]
+
+FROM 		{databaseOwner}{objectQualifier}Help_Category
+
+WHERE		[Parent] = @ParentID AND [ModuleID] = @ModuleID
+AND			[Deleted] <> 1
+
+ORDER BY	[Level] ASC,
+			[Parent] ASC,
+			[ViewOrder] ASC
+
+GO
+
+
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}Help_ListCategoryActiveByParent
+
+@ModuleID int,
+@ParentID int
+	
+AS
+SELECT 		[CategoryID],
+			[CategoryGUID],
+			[Name],
+			[Description],
+			[Image],
+			[KeyWords],
+			[ModuleID],
+			[ViewOrder],
+			[Level],
+			[Parent],
+			[Visible],
+			[Deleted]
+
+FROM 		{databaseOwner}{objectQualifier}Help_Category
+
+WHERE		[Parent] = @ParentID AND [ModuleID] = @ModuleID
+AND			[Deleted] <> 1
+AND			[Visible] <> 0
+
+ORDER BY	[Level] ASC,
+			[Parent] ASC,
+			[ViewOrder] ASC
+			
+
+GO
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}Help_ListCategoryActive
+
+@ModuleID int
+	
+AS
+SELECT 		[CategoryID],
+			[CategoryGUID],
+			[Name],
+			[Description],
+			[Image],
+			[KeyWords],
+			[ModuleID],
+			[ViewOrder],
+			[Level],
+			[Parent],
+			[Visible],
+			[Deleted]
+
+FROM 		{databaseOwner}{objectQualifier}Help_Category
+
+WHERE		[ModuleID] = @ModuleID 
+AND			[Deleted] <> 1
+AND			[Visible] <> 0
+
+ORDER BY	[Level] ASC,
+			[Parent] ASC,
+			[ViewOrder] ASC
+			
+GO
+
+
+ALTER  PROCEDURE {databaseOwner}{objectQualifier}Help_ListCategory
+
+@ModuleID int
+	
+AS
+
+SELECT 		[CategoryID],
+			[CategoryGUID],
+			[Name],
+			[Description],
+			[Image],
+			[KeyWords],
+			[ModuleID],
+			[ViewOrder],
+			[Level],
+			[Parent],
+			[Visible],
+			[Deleted]
+		
+FROM		{databaseOwner}{objectQualifier}Help_Category
+
+WHERE		[ModuleID] = @ModuleID
+AND			[Deleted] <> 1
+
+ORDER BY	[Level] ASC,
+			[Parent] ASC,
+			[ViewOrder] ASC
+			
+GO
+			
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}Help_AddCategory
+
+@Name nvarchar(50),
+@Description nvarchar(500),
+@Image nvarchar(50),
+@KeyWords nvarchar(255),
+@ModuleID int,
+@Order int,
+@Level int,
+@Parent int,
+@Visible bit
+
+As
+
+
+INSERT INTO {databaseOwner}{objectQualifier}Help_Category(
+		[Name],
+		[Description],
+		[Image],
+		[ModuleID],
+		[KeyWords],
+		[ViewOrder],
+		[Level],
+		[Parent],
+		[Visible],
+		[Deleted],
+		[LastUpdated],
+		[CategoryGUID]
+)VALUES(
+		@Name,
+		@Description,
+		@Image,
+		@ModuleID,
+		@KeyWords,
+		@Order,
+		@Level,
+		@Parent,
+		@Visible,
+		0,
+		GetDate(),
+		NewID()
+)
+
+SELECT @@identity
+
+GO
+
+
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}Help_AddCategoryFromImport
+@CategoryGUID uniqueidentifier,
+@Name nvarchar(50),
+@Description nvarchar(500),
+@Image nvarchar(50),
+@KeyWords nvarchar(255),
+@ModuleID int,
+@Order int,
+@Level int,
+@Parent int,
+@Visible bit
+
+As
+
+DECLARE @@RECORDCOUNT integer
+
+SELECT @@RECORDCOUNT=COUNT(CategoryID) FROM {databaseOwner}{objectQualifier}Help_Category WHERE [CategoryGUID] = @CategoryGUID AND ModuleID = @ModuleID
+
+IF @@RECORDCOUNT>0 
+BEGIN
+
+UPDATE dbo.Help_Category
+
+SET 
+    	[Name] = @Name,
+    	[Description] = @Description,
+    	[Image] = @Image,
+    	[KeyWords] = @KeyWords,
+		[ViewOrder] = @Order,
+		[Level] = @Level,
+		[Parent] = @Parent,
+		[Visible] = @Visible
+
+WHERE 	[CategoryGUID] = @CategoryGUID
+
+SELECT CategoryId FROM {databaseOwner}{objectQualifier}Help_Category 
+WHERE [CategoryGUID] = @CategoryGUID
+
+END
+ELSE
+BEGIN
+INSERT INTO {databaseOwner}{objectQualifier}Help_Category(
+		[CategoryGUID],
+		[Name],
+		[Description],
+		[Image],
+		[ModuleID],
+		[KeyWords],
+		[ViewOrder],
+		[Level],
+		[Parent],
+		[Visible],
+		[Deleted],
+		[LastUpdated]
+)VALUES(
+		@CategoryGUID,
+		@Name,
+		@Description,
+		@Image,
+		@ModuleID,
+		@KeyWords,
+		@Order,
+		@Level,
+		@Parent,
+		@Visible,
+		0,
+		GetDate()
+)
+
+SELECT @@identity
+
+END
+
+
+GO
+
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}Help_UpdateCategory
+
+@CategoryID int,
+@Name nvarchar(50),
+@Description nvarchar(500),
+@Image nvarchar(50),
+@KeyWords nvarchar(200),
+@Order int,
+@Level int,
+@Parent int,
+@Visible bit
+
+AS
+
+UPDATE {databaseOwner}{objectQualifier}Help_Category
+
+SET 
+    	[Name] = @Name,
+    	[Description] = @Description,
+    	[Image] = @Image,
+    	[KeyWords] = @KeyWords,
+		[ViewOrder] = @Order,
+		[Level] = @Level,
+		[Parent] = @Parent,
+		[Visible] = @Visible
+
+WHERE 	[CategoryID] = @CategoryID
+

@@ -1,0 +1,1186 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              Help               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+/* Insert here the code to create tables and stored procs   */
+
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_AddCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_AddCategory]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_AddTutorial]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_AddTutorial]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_CategorySetInvisible]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_CategorySetInvisible]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_CategorySetLevel]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_CategorySetLevel]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_DeleteCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_DeleteCategory]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_DeleteTutorial]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_DeleteTutorial]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_GetTutorial]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_GetTutorial]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_ListCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_ListCategory]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_ListCategoryActive]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_ListCategoryActive]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_ListCategoryActiveByParent]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_ListCategoryActiveByParent]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_ListTutorial]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_ListTutorial]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_TutorialAddToCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_TutorialAddToCategory]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_TutorialCategoryList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_TutorialCategoryList]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_TutorialDeleteCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_TutorialDeleteCategory]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_UpdateCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_UpdateCategory]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_UpdateTutorial]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_UpdateTutorial]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_UpdateTutorialViewOrder]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_UpdateTutorialViewOrder]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_Category]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}Help_Category]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_TutorialCategory]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}Help_TutorialCategory]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_Tutorials]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}Help_Tutorials]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_GetCategoryModules]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_GetCategoryModules]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_AddCategoryFromImport]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_AddCategoryFromImport]
+GO
+
+if exists (select * from sysobjects where id = object_id(N'[{databaseOwner}{objectQualifier}Help_AddTutorialFromImport]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [{databaseOwner}{objectQualifier}Help_AddTutorialFromImport]
+GO
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_AddTutorial]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_AddTutorial]
+GO
+
+
+CREATE TABLE {databaseOwner}[{objectQualifier}Help_Category] (
+	[CategoryID] [int] IDENTITY (1, 1) NOT NULL ,
+	[Name] [nvarchar] (50) ,
+	[Description] [nvarchar] (500) ,
+	[Image] [int] NULL ,
+	[KeyWords] [nvarchar] (255) ,
+	[ModuleID] [int] NULL ,
+	[Order] [int] NOT NULL ,
+	[Level] [int] NOT NULL ,
+	[Parent] [int] NULL ,
+	[Visible] [bit] NULL ,
+	[Deleted] [bit] NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE {databaseOwner}[{objectQualifier}Help_TutorialCategory] (
+	[CategoryID] [int] NOT NULL ,
+	[ItemID] [int] IDENTITY (1, 1) NOT NULL ,
+	[ViewOrder] [int] NOT NULL ,
+	[TutorialID] [int] NULL 
+) ON [PRIMARY]
+GO
+
+CREATE TABLE {databaseOwner}[{objectQualifier}Help_Tutorials] (
+	[ProductImage] [nvarchar] (150) ,
+	[Featured] [bit] NOT NULL ,
+	[KeyWords] [nvarchar] (200) ,
+	[DownloadName] [nvarchar] (200) ,
+	[ShortDesc] [nvarchar] (500)  ,
+	[Archive] [bit] NOT NULL ,
+	[Description] [ntext]  ,
+	[TutorialID] [int] IDENTITY (1, 1) NOT NULL ,
+	[Title] [nvarchar] (250)
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Help_TutorialCategory] WITH NOCHECK ADD 
+	CONSTRAINT [PK_{objectQualifier}Help_TutorialCategory] PRIMARY KEY  CLUSTERED 
+	(
+		[ItemID]
+	) WITH  FILLFACTOR = 90  ON [PRIMARY] 
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Help_Tutorials] WITH NOCHECK ADD 
+	CONSTRAINT [PK_{objectQualifier}Help_Tutorials] PRIMARY KEY  CLUSTERED 
+	(
+		[TutorialID]
+	) WITH  FILLFACTOR = 90  ON [PRIMARY] 
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Help_TutorialCategory] ADD 
+	CONSTRAINT [DF_{objectQualifier}Help_TutorialCategory_ViewOrder] DEFAULT (99) FOR [ViewOrder]
+GO
+
+
+
+/* -------------------------------------------------------------------------------------
+/   TutorialsAdd
+/  ------------------------------------------------------------------------------------- */
+
+
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_CategorySetInvisible
+
+@CategoryID int
+
+AS
+
+UPDATE {databaseOwner}{objectQualifier}Help_Category
+
+SET 
+		[Visible] = 0
+
+WHERE 	[CategoryID] = @CategoryID
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_CategorySetLevel
+
+@CategoryID int,
+@Level int
+
+AS
+
+UPDATE {databaseOwner}{objectQualifier}Help_Category
+
+SET 
+		[Level] = @Level
+
+WHERE 	[CategoryID] = @CategoryID
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_DeleteCategory
+
+@CategoryID int
+
+AS
+
+UPDATE {databaseOwner}{objectQualifier}Help_Category
+
+SET			[Deleted] = 1
+
+WHERE 		[CategoryID] = @CategoryID
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_DeleteTutorial
+
+@TutorialID int
+
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}Help_Tutorials
+WHERE	TutorialID=@TutorialID
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_GetTutorial
+
+@TutorialID int
+
+AS
+
+SELECT     
+	{databaseOwner}{objectQualifier}Help_Tutorials.TutorialID, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.Title, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.ProductImage, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.Featured, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.KeyWords, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.DownloadName, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.ShortDesc, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.Archive, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.Description, 
+	{databaseOwner}{objectQualifier}Help_TutorialCategory.ViewOrder
+FROM {databaseOwner}{objectQualifier}Help_Tutorials INNER JOIN
+{databaseOwner}{objectQualifier}Help_TutorialCategory ON 
+{databaseOwner}{objectQualifier}Help_Tutorials.TutorialID = {databaseOwner}{objectQualifier}Help_TutorialCategory.TutorialID
+WHERE	{databaseOwner}{objectQualifier}Help_Tutorials.TutorialID=@TutorialID
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE  PROCEDURE {databaseOwner}{objectQualifier}Help_ListCategory
+
+@ModuleID int
+	
+AS
+
+SELECT 		[CategoryID],
+			[Name],
+			[Description],
+			[Image],
+			[KeyWords],
+			[ModuleID],
+			[Order],
+			[Level],
+			[Parent],
+			[Visible],
+			[Deleted]
+		
+FROM		{databaseOwner}{objectQualifier}Help_Category
+
+WHERE		[ModuleID] = @ModuleID
+AND			[Deleted] <> 1
+
+ORDER BY	[Level] ASC,
+			[Parent] ASC,
+			[Order] ASC
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_ListCategoryActive
+
+@ModuleID int
+	
+AS
+SELECT 		[CategoryID],
+			[Name],
+			[Description],
+			[Image],
+			[KeyWords],
+			[ModuleID],
+			[Order],
+			[Level],
+			[Parent],
+			[Visible],
+			[Deleted]
+
+FROM 		{databaseOwner}{objectQualifier}Help_Category
+
+WHERE		[ModuleID] = @ModuleID 
+AND			[Deleted] <> 1
+AND			[Visible] <> 0
+
+ORDER BY	[Level] ASC,
+			[Parent] ASC,
+			[Order] ASC
+
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_ListCategoryActiveByParent
+
+@ParentID int
+	
+AS
+SELECT 		[CategoryID],
+			[Name],
+			[Description],
+			[Image],
+			[KeyWords],
+			[ModuleID],
+			[Order],
+			[Level],
+			[Parent],
+			[Visible],
+			[Deleted]
+
+FROM 		{databaseOwner}{objectQualifier}Help_Category
+
+WHERE		[Parent] = @ParentID 
+AND			[Deleted] <> 1
+AND			[Visible] <> 0
+
+ORDER BY	[Level] ASC,
+			[Parent] ASC,
+			[Order] ASC
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_ListTutorial
+
+@CategoryID int
+
+AS
+
+SELECT     
+		{databaseOwner}{objectQualifier}Help_Tutorials.TutorialID, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Title, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.ProductImage, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Featured, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.KeyWords, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.DownloadName, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.ShortDesc, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Archive, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Description,
+        {databaseOwner}{objectQualifier}Help_TutorialCategory.ViewOrder
+FROM	{databaseOwner}{objectQualifier}Help_TutorialCategory INNER JOIN
+		{databaseOwner}{objectQualifier}Help_Tutorials ON 
+		{databaseOwner}{objectQualifier}Help_TutorialCategory.TutorialID = {databaseOwner}{objectQualifier}Help_Tutorials.TutorialID
+WHERE	({databaseOwner}{objectQualifier}Help_TutorialCategory.CategoryID = @CategoryID)
+ORDER BY {databaseOwner}{objectQualifier}Help_TutorialCategory.ViewOrder, {databaseOwner}{objectQualifier}Help_Tutorials.Title
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_TutorialAddToCategory
+(
+    @TutorialId int,
+    @CategoryId int
+)
+As
+
+INSERT INTO {databaseOwner}{objectQualifier}Help_TutorialCategory(
+	[TutorialId],
+	[CategoryId]
+)VALUES(
+	@TutorialId,
+	@CategoryId
+)
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_TutorialCategoryList
+
+@TutorialID int
+
+AS
+
+SELECT CategoryId
+FROM {databaseOwner}{objectQualifier}Help_TutorialCategory
+WHERE {databaseOwner}{objectQualifier}Help_TutorialCategory.TutorialId = @TutorialID
+
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_TutorialDeleteCategory
+
+    @TutorialId int,
+    @CategoryID int
+
+AS
+
+
+DELETE FROM {databaseOwner}{objectQualifier}Help_TutorialCategory 
+WHERE TutorialId = @TutorialId AND CategoryID=@CategoryID
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_UpdateCategory
+
+@CategoryID int,
+@Name nvarchar(50),
+@Description nvarchar(500),
+@Image nvarchar(50),
+@KeyWords nvarchar(200),
+@Order int,
+@Level int,
+@Parent int,
+@Visible bit
+
+AS
+
+UPDATE {databaseOwner}{objectQualifier}Help_Category
+
+SET 
+    	[Name] = @Name,
+    	[Description] = @Description,
+    	[Image] = @Image,
+    	[KeyWords] = @KeyWords,
+		[Order] = @Order,
+		[Level] = @Level,
+		[Parent] = @Parent,
+		[Visible] = @Visible
+
+WHERE 	[CategoryID] = @CategoryID
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_UpdateTutorial
+	@TutorialID int, 
+	@Title nvarchar(250), 
+	@ProductImage nvarchar(150), 
+	@Featured bit, 
+	@KeyWords nvarchar(200), 
+	@DownloadName nvarchar(200), 
+	@ShortDesc nvarchar(500), 
+	@Archive bit, 
+	@Description ntext 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}Help_Tutorials SET
+	[Title] = @Title,
+	[ProductImage] = @ProductImage,
+	[Featured] = @Featured,
+	[KeyWords] = @KeyWords,
+	[DownloadName] = @DownloadName,
+	[ShortDesc] = @ShortDesc,
+	[Archive] = @Archive,
+	[Description] = @Description
+WHERE
+	[TutorialID] = @TutorialID
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_UpdateTutorialViewOrder
+@TutorialID int,
+@CategoryID int,
+@ViewOrder int
+
+AS
+
+UPDATE {databaseOwner}{objectQualifier}Help_TutorialCategory
+SET ViewOrder=@ViewOrder
+WHERE CategoryID=@CategoryID AND TutorialID=@TutorialID
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+
+CREATE procedure {databaseOwner}{objectQualifier}Help_GetCategoryModules
+@TabId int
+as
+SELECT    
+    {databaseOwner}{objectQualifier}TabModules.TabID AS TabID, 
+    {databaseOwner}{objectQualifier}Modules.*, 
+    {databaseOwner}{objectQualifier}Modules.PortalID AS PortalID
+FROM         
+    {databaseOwner}{objectQualifier}ModuleDefinitions INNER JOIN
+    {databaseOwner}{objectQualifier}Modules ON 
+    {databaseOwner}{objectQualifier}ModuleDefinitions.ModuleDefID = {databaseOwner}{objectQualifier}Modules.ModuleDefID INNER JOIN
+    {databaseOwner}{objectQualifier}TabModules ON 
+    {databaseOwner}{objectQualifier}Modules.ModuleID = {databaseOwner}{objectQualifier}TabModules.ModuleID
+WHERE     
+    ({databaseOwner}{objectQualifier}ModuleDefinitions.FriendlyName = N'Category') AND 
+    ({databaseOwner}{objectQualifier}TabModules.TabID = @TabId)
+    and {databaseOwner}{objectQualifier}Modules.IsDeleted=0
+order by 
+    TabId
+
+
+GO
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              Help               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+/* Insert here the code to create tables and stored procs   */
+
+
+ALTER TABLE {databaseOwner}{objectQualifier}Help_Category ADD LastUpdated datetime null
+
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Help_Category ADD CategoryGUID uniqueidentifier null
+
+Go
+
+ALTER TABLE {databaseOwner}{objectQualifier}Help_Tutorials ADD LastUpdated datetime null
+
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Help_Tutorials ADD TutorialGUID uniqueidentifier null
+
+Go
+
+ALTER TABLE {databaseOwner}{objectQualifier}Help_Tutorials ADD ModuleID int null
+
+Go
+
+ALTER TABLE {databaseOwner}{objectQualifier}Help_TutorialCategory ADD LastUpdated datetime null
+
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Help_TutorialCategory ADD TutorialCategoryGUID uniqueidentifier null
+
+Go
+
+
+UPDATE {databaseOwner}{objectQualifier}Help_Category SET LastUpdated =GetDate()
+
+GO
+
+
+UPDATE {databaseOwner}{objectQualifier}Help_Category SET CategoryGUID = NEWID()
+Go
+
+
+UPDATE {databaseOwner}{objectQualifier}Help_TutorialCategory SET LastUpdated =GetDate()
+
+GO
+
+
+UPDATE {databaseOwner}{objectQualifier}Help_TutorialCategory SET TutorialCategoryGUID = NEWID()
+Go
+
+
+UPDATE {databaseOwner}{objectQualifier}Help_Tutorials SET LastUpdated =GetDate()
+
+GO
+
+
+UPDATE {databaseOwner}{objectQualifier}Help_Tutorials SET TutorialGUID = NEWID()
+Go
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_AddCategory
+
+@Name nvarchar(50),
+@Description nvarchar(500),
+@Image nvarchar(50),
+@KeyWords nvarchar(255),
+@ModuleID int,
+@Order int,
+@Level int,
+@Parent int,
+@Visible bit
+
+As
+
+
+INSERT INTO {databaseOwner}{objectQualifier}Help_Category(
+		[Name],
+		[Description],
+		[Image],
+		[ModuleID],
+		[KeyWords],
+		[Order],
+		[Level],
+		[Parent],
+		[Visible],
+		[Deleted],
+		[LastUpdated],
+		[CategoryGUID]
+)VALUES(
+		@Name,
+		@Description,
+		@Image,
+		@ModuleID,
+		@KeyWords,
+		@Order,
+		@Level,
+		@Parent,
+		@Visible,
+		0,
+		GetDate(),
+		NewID()
+)
+
+SELECT @@identity
+
+
+GO
+
+
+
+
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}Help_GetTutorial
+
+@TutorialID int
+
+AS
+
+SELECT     
+	{databaseOwner}{objectQualifier}Help_Tutorials.TutorialGUID,
+	{databaseOwner}{objectQualifier}Help_Tutorials.TutorialID, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.Title, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.ProductImage, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.Featured, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.KeyWords, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.DownloadName, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.ShortDesc, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.Archive, 
+	{databaseOwner}{objectQualifier}Help_Tutorials.Description, 
+	{databaseOwner}{objectQualifier}Help_TutorialCategory.ViewOrder
+FROM {databaseOwner}{objectQualifier}Help_Tutorials INNER JOIN
+{databaseOwner}{objectQualifier}Help_TutorialCategory ON 
+{databaseOwner}{objectQualifier}Help_Tutorials.TutorialID = {databaseOwner}{objectQualifier}Help_TutorialCategory.TutorialID
+WHERE	{databaseOwner}{objectQualifier}Help_Tutorials.TutorialID=@TutorialID
+
+
+GO
+
+
+
+ALTER  PROCEDURE {databaseOwner}{objectQualifier}Help_ListCategory
+
+@ModuleID int
+	
+AS
+
+SELECT 		[CategoryID],
+			[CategoryGUID],
+			[Name],
+			[Description],
+			[Image],
+			[KeyWords],
+			[ModuleID],
+			[Order],
+			[Level],
+			[Parent],
+			[Visible],
+			[Deleted]
+		
+FROM		{databaseOwner}{objectQualifier}Help_Category
+
+WHERE		[ModuleID] = @ModuleID
+AND			[Deleted] <> 1
+
+ORDER BY	[Level] ASC,
+			[Parent] ASC,
+			[Order] ASC
+
+
+
+
+
+GO
+
+
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}Help_ListCategoryActive
+
+@ModuleID int
+	
+AS
+SELECT 		[CategoryID],
+			[CategoryGUID],
+			[Name],
+			[Description],
+			[Image],
+			[KeyWords],
+			[ModuleID],
+			[Order],
+			[Level],
+			[Parent],
+			[Visible],
+			[Deleted]
+
+FROM 		{databaseOwner}{objectQualifier}Help_Category
+
+WHERE		[ModuleID] = @ModuleID 
+AND			[Deleted] <> 1
+AND			[Visible] <> 0
+
+ORDER BY	[Level] ASC,
+			[Parent] ASC,
+			[Order] ASC
+
+
+
+
+
+GO
+
+
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}Help_ListCategoryActiveByParent
+
+@ParentID int
+	
+AS
+SELECT 		[CategoryID],
+			[CategoryGUID],
+			[Name],
+			[Description],
+			[Image],
+			[KeyWords],
+			[ModuleID],
+			[Order],
+			[Level],
+			[Parent],
+			[Visible],
+			[Deleted]
+
+FROM 		{databaseOwner}{objectQualifier}Help_Category
+
+WHERE		[Parent] = @ParentID 
+AND			[Deleted] <> 1
+AND			[Visible] <> 0
+
+ORDER BY	[Level] ASC,
+			[Parent] ASC,
+			[Order] ASC
+
+
+
+GO
+
+
+
+
+
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}Help_ListTutorial
+
+@CategoryID int
+
+AS
+
+SELECT     
+		{databaseOwner}{objectQualifier}Help_Tutorials.TutorialGUID, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.TutorialID, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Title, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.ProductImage, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Featured, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.KeyWords, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.DownloadName, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.ShortDesc, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Archive, 
+		{databaseOwner}{objectQualifier}Help_Tutorials.Description,
+        {databaseOwner}{objectQualifier}Help_TutorialCategory.ViewOrder
+FROM	{databaseOwner}{objectQualifier}Help_TutorialCategory INNER JOIN
+		{databaseOwner}{objectQualifier}Help_Tutorials ON 
+		{databaseOwner}{objectQualifier}Help_TutorialCategory.TutorialID = {databaseOwner}{objectQualifier}Help_Tutorials.TutorialID
+WHERE	({databaseOwner}{objectQualifier}Help_TutorialCategory.CategoryID = @CategoryID)
+ORDER BY {databaseOwner}{objectQualifier}Help_TutorialCategory.ViewOrder, {databaseOwner}{objectQualifier}Help_Tutorials.Title
+
+
+
+
+GO
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_AddCategoryFromImport
+@CategoryGUID uniqueidentifier,
+@Name nvarchar(50),
+@Description nvarchar(500),
+@Image nvarchar(50),
+@KeyWords nvarchar(255),
+@ModuleID int,
+@Order int,
+@Level int,
+@Parent int,
+@Visible bit
+
+As
+
+DECLARE @@RECORDCOUNT integer
+
+SELECT @@RECORDCOUNT=COUNT(CategoryID) FROM {databaseOwner}{objectQualifier}Help_Category WHERE [CategoryGUID] = @CategoryGUID AND ModuleID = @ModuleID
+
+IF @@RECORDCOUNT>0 
+BEGIN
+
+UPDATE {databaseOwner}{objectQualifier}Help_Category
+
+SET 
+    	[Name] = @Name,
+    	[Description] = @Description,
+    	[Image] = @Image,
+    	[KeyWords] = @KeyWords,
+		[Order] = @Order,
+		[Level] = @Level,
+		[Parent] = @Parent,
+		[Visible] = @Visible
+
+WHERE 	[CategoryGUID] = @CategoryGUID
+
+SELECT CategoryId FROM {databaseOwner}{objectQualifier}Help_Category 
+WHERE [CategoryGUID] = @CategoryGUID
+
+END
+ELSE
+BEGIN
+INSERT INTO {databaseOwner}{objectQualifier}Help_Category(
+		[CategoryGUID],
+		[Name],
+		[Description],
+		[Image],
+		[ModuleID],
+		[KeyWords],
+		[Order],
+		[Level],
+		[Parent],
+		[Visible],
+		[Deleted],
+		[LastUpdated]
+)VALUES(
+		@CategoryGUID,
+		@Name,
+		@Description,
+		@Image,
+		@ModuleID,
+		@KeyWords,
+		@Order,
+		@Level,
+		@Parent,
+		@Visible,
+		0,
+		GetDate()
+)
+
+SELECT @@identity
+
+END
+
+GO
+
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_AddTutorialFromImport
+	@TutorialGUID uniqueidentifier,
+	@Title nvarchar(250),
+	@ModuleID int,
+	@ProductImage nvarchar(150),
+	@Featured bit,
+	@KeyWords nvarchar(200),
+	@DownloadName nvarchar(200),
+	@ShortDesc nvarchar(500),
+	@Archive bit,
+	@Description ntext
+
+As
+
+DECLARE @@RECORDCOUNT integer
+
+SELECT @@RECORDCOUNT=COUNT(TutorialID) FROM {databaseOwner}{objectQualifier}Help_Tutorials WHERE TutorialGUID=@TutorialGUID AND ModuleID = @ModuleID
+
+IF @@RECORDCOUNT>0 
+BEGIN
+
+UPDATE {databaseOwner}{objectQualifier}Help_Tutorials SET 
+    [Title]=@Title,
+    [ModuleID]=@ModuleID,
+	[ProductImage]=@ProductImage,
+	[Featured]=@Featured,
+	[KeyWords]=@KeyWords,
+	[DownloadName]=@DownloadName,
+	[ShortDesc]=@ShortDesc,
+	[Archive]=@Archive,
+	[Description]=@Description,
+	[LastUpdated]=GetDate()
+
+WHERE [TutorialGUID] = @TutorialGUID
+
+SELECT tutorialId FROM {databaseOwner}{objectQualifier}Help_Tutorials 
+WHERE [TutorialGUID] = @TutorialGUID
+
+END
+ELSE
+BEGIN
+
+INSERT INTO {databaseOwner}{objectQualifier}Help_Tutorials (
+	[Title],
+	[ModuleID],
+	[ProductImage],
+	[Featured],
+	[KeyWords],
+	[DownloadName],
+	[ShortDesc],
+	[Archive],
+	[Description],
+	[LastUpdated],
+	[TutorialGUID]
+) VALUES (
+	@Title,
+	@ModuleID,
+	@ProductImage,
+	@Featured,
+	@KeyWords,
+	@DownloadName,
+	@ShortDesc,
+	@Archive,
+	@Description,
+	GetDate(),
+	@TutorialGUID
+)
+
+SELECT @@identity
+
+END
+GO
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Help_AddTutorial
+	@Title nvarchar(250),
+	@ModuleID int,
+	@ProductImage nvarchar(150),
+	@Featured bit,
+	@KeyWords nvarchar(200),
+	@DownloadName nvarchar(200),
+	@ShortDesc nvarchar(500),
+	@Archive bit,
+	@Description ntext
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}Help_Tutorials (
+	[Title],
+	[ModuleID],
+	[ProductImage],
+	[Featured],
+	[KeyWords],
+	[DownloadName],
+	[ShortDesc],
+	[Archive],
+	[Description],
+	[LastUpdated],
+	[TutorialGUID]
+) VALUES (
+	@Title,
+	@ModuleID,
+	@ProductImage,
+	@Featured,
+	@KeyWords,
+	@DownloadName,
+	@ShortDesc,
+	@Archive,
+	@Description,
+	GetDate(),
+	NewID()
+)
+
+select SCOPE_IDENTITY()
+
+
+GO
+

@@ -1,0 +1,474 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* =====================================================================================
+/   TABLE: M2Land_FlashImageRotator
+/  ===================================================================================== */
+
+if exists (select * from dbo.sysobjects where id = object_id('{databaseOwner}[{objectQualifier}M2Land_FlashImageRotator]') and OBJECTPROPERTY(id, 'IsUserTable') = 1)
+Drop table {databaseOwner}[{objectQualifier}M2Land_FlashImageRotator] 
+go
+
+
+Create table {databaseOwner}[{objectQualifier}M2Land_FlashImageRotator]
+(
+	[ModuleID] Integer NULL,
+	[Source] Nvarchar(100) NULL,
+	[Height] Integer NULL,
+	[Width] Integer NULL,
+	[File] Nvarchar(100) NULL,
+	[Image] Nvarchar(100) NULL,
+	[ID] Nvarchar(100) NULL,
+	[SearchBar] Bit NULL,
+	[BackColor] Char(8) NULL,
+	[FrontColor] Char(8) NULL,
+	[LightColor] Char(8) NULL,
+	[ScreenColor] Char(8) NULL,
+	[Logo] Nvarchar(100) NULL,
+	[OverStrech] Char(10) NULL,
+	[ShowEq] Bit NULL,
+	[ShowIcons] Bit NULL,
+	[Transtion] Char(10) NULL,
+	[ShowNavigation] Bit NULL,
+	[ShowStop] Bit NULL,
+	[ShowDigits] Bit NULL,
+	[ShowDownload] Bit NULL,
+	[UseFullScreen] Bit NULL,
+	[AutoScroll] Bit NULL,
+	[DisplayHeight] Integer NULL,
+	[DisplayWidth] Integer NULL,
+	[ThumbsInPlaylist] Bit NULL,
+	[Audio] Nvarchar(100) NULL,
+	[AutoStart] Bit NULL,
+	[BufferLength] Integer NULL,
+	[Captions] Char(10) NULL,
+	[FallBack] Nvarchar(100) NULL,
+	[Repeat] Char(10) NULL,
+	[RotateTime] Integer NULL,
+	[Shuffle] Bit NULL,
+	[Smoothing] Bit NULL,
+	[Volume] Integer NULL,
+	[CallBack] Varchar(10) NULL,
+	[EnableJS] Bit NULL,
+	[JavascriptID] Varchar(50) NULL,
+	[Link] Nvarchar(100) NULL,
+	[LinkFromDisplay] Bit NULL,
+	[LinkTarget] Char(10) NULL,
+	[Recommendation] Nvarchar(100) NULL,
+	[SearchLink] Nvarchar(100) NULL,
+	[StreamScript] Nvarchar(100) NULL,
+	[Type] Char(10) NULL
+) 
+go
+
+
+		CREATE NONCLUSTERED INDEX [IX_M2Land_FlashImageRotator] ON {databaseOwner}[{objectQualifier}M2Land_FlashImageRotator] ([ModuleID])
+
+		ALTER TABLE {databaseOwner}[{objectQualifier}M2Land_FlashImageRotator] WITH NOCHECK ADD CONSTRAINT [FK_M2Land_FlashImageRotator_Modules] FOREIGN KEY ([ModuleID]) REFERENCES {databaseOwner}[{objectQualifier}Modules] ([ModuleID]) ON DELETE CASCADE NOT FOR REPLICATION
+
+
+
+-- DROP GET PROCEDURE -------------------------------------------------------------------------------------%>
+/****** Object:  Stored Procedure {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorGet    Script Date: 2008?6?17? ******/
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}M2Land_FlashImageRotatorGet') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorGet 
+GO
+
+-- DROP LIST PROCEDURE -------------------------------------------------------------------------------------%>
+/****** Object:  Stored Procedure {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorGetAll     Script Date: 2008?6?17? ******/
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}M2Land_FlashImageRotatorGetAll') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorGetAll
+GO
+
+-- DROP INSERT PROCEDURE -----------------------------------------------------------------------------------%>
+/****** Object:  Stored Procedure {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorAdd    Script Date: 2008?6?17? ******/
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}M2Land_FlashImageRotatorAdd') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorAdd
+GO
+
+-- DROP UPDATE PROCEDURE -------------------------------------------------------------------------------------%>
+/****** Object:  Stored Procedure {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorUpdate    Script Date: 2008?6?17? ******/
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}M2Land_FlashImageRotatorUpdate') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorUpdate
+GO
+
+-- DROP DELETE PROCEDURE -------------------------------------------------------------------------------------%>
+/****** Object:  Stored Procedure {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorDelete    Script Date: 2008?6?17? ******/
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}{objectQualifier}M2Land_FlashImageRotatorDelete') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorDelete
+GO
+
+-- GET PROCEDURE -------------------------------------------------------------------------------------%>
+/* -------------------------------------------------------------------------------------
+/   {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorGet
+/  ------------------------------------------------------------------------------------- */
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS OFF 
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorGet
+	@ModuleID int 
+AS
+
+SELECT
+	[ModuleID],
+	[Source],
+	[Height],
+	[Width],
+	[File],
+	[Image],
+	[ID],
+	[SearchBar],
+	[BackColor],
+	[FrontColor],
+	[LightColor],
+	[ScreenColor],
+	[Logo],
+	[OverStrech],
+	[ShowEq],
+	[ShowIcons],
+	[Transtion],
+	[ShowNavigation],
+	[ShowStop],
+	[ShowDigits],
+	[ShowDownload],
+	[UseFullScreen],
+	[AutoScroll],
+	[DisplayHeight],
+	[DisplayWidth],
+	[ThumbsInPlaylist],
+	[Audio],
+	[AutoStart],
+	[BufferLength],
+	[Captions],
+	[FallBack],
+	[Repeat],
+	[RotateTime],
+	[Shuffle],
+	[Smoothing],
+	[Volume],
+	[CallBack],
+	[EnableJS],
+	[JavascriptID],
+	[Link],
+	[LinkFromDisplay],
+	[LinkTarget],
+	[Recommendation],
+	[SearchLink],
+	[StreamScript],
+	[Type]
+FROM {objectQualifier}M2Land_FlashImageRotator
+WHERE
+	[ModuleID]=@ModuleID 
+GO
+
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+
+-- INSERT PROCEDURE -------------------------------------------------------------------------------------%>
+/* -------------------------------------------------------------------------------------
+/   {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorAdd
+/  ------------------------------------------------------------------------------------- */
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS OFF 
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorAdd
+	@ModuleID int,
+	@Source nvarchar(100),
+	@Height int,
+	@Width int,
+	@File nvarchar(100),
+	@Image nvarchar(100),
+	@ID nvarchar(100),
+	@SearchBar bit,
+	@BackColor char(8),
+	@FrontColor char(8),
+	@LightColor char(8),
+	@ScreenColor char(8),
+	@Logo nvarchar(100),
+	@OverStrech char(10),
+	@ShowEq bit,
+	@ShowIcons bit,
+	@Transtion char(10),
+	@ShowNavigation bit,
+	@ShowStop bit,
+	@ShowDigits bit,
+	@ShowDownload bit,
+	@UseFullScreen bit,
+	@AutoScroll bit,
+	@DisplayHeight int,
+	@DisplayWidth int,
+	@ThumbsInPlaylist bit,
+	@Audio nvarchar(100),
+	@AutoStart bit,
+	@BufferLength int,
+	@Captions char(10),
+	@FallBack nvarchar(100),
+	@Repeat char(10),
+	@RotateTime int,
+	@Shuffle bit,
+	@Smoothing bit,
+	@Volume int,
+	@CallBack varchar(10),
+	@EnableJS bit,
+	@JavascriptID varchar(50),
+	@Link nvarchar(100),
+	@LinkFromDisplay bit,
+	@LinkTarget char(10),
+	@Recommendation nvarchar(100),
+	@SearchLink nvarchar(100),
+	@StreamScript nvarchar(100),
+	@Type char(10)
+AS
+
+INSERT INTO {objectQualifier}M2Land_FlashImageRotator (
+	[ModuleID],
+	[Source],
+	[Height],
+	[Width],
+	[File],
+	[Image],
+	[ID],
+	[SearchBar],
+	[BackColor],
+	[FrontColor],
+	[LightColor],
+	[ScreenColor],
+	[Logo],
+	[OverStrech],
+	[ShowEq],
+	[ShowIcons],
+	[Transtion],
+	[ShowNavigation],
+	[ShowStop],
+	[ShowDigits],
+	[ShowDownload],
+	[UseFullScreen],
+	[AutoScroll],
+	[DisplayHeight],
+	[DisplayWidth],
+	[ThumbsInPlaylist],
+	[Audio],
+	[AutoStart],
+	[BufferLength],
+	[Captions],
+	[FallBack],
+	[Repeat],
+	[RotateTime],
+	[Shuffle],
+	[Smoothing],
+	[Volume],
+	[CallBack],
+	[EnableJS],
+	[JavascriptID],
+	[Link],
+	[LinkFromDisplay],
+	[LinkTarget],
+	[Recommendation],
+	[SearchLink],
+	[StreamScript],
+	[Type]
+) VALUES (
+	@ModuleID,
+	@Source,
+	@Height,
+	@Width,
+	@File,
+	@Image,
+	@ID,
+	@SearchBar,
+	@BackColor,
+	@FrontColor,
+	@LightColor,
+	@ScreenColor,
+	@Logo,
+	@OverStrech,
+	@ShowEq,
+	@ShowIcons,
+	@Transtion,
+	@ShowNavigation,
+	@ShowStop,
+	@ShowDigits,
+	@ShowDownload,
+	@UseFullScreen,
+	@AutoScroll,
+	@DisplayHeight,
+	@DisplayWidth,
+	@ThumbsInPlaylist,
+	@Audio,
+	@AutoStart,
+	@BufferLength,
+	@Captions,
+	@FallBack,
+	@Repeat,
+	@RotateTime,
+	@Shuffle,
+	@Smoothing,
+	@Volume,
+	@CallBack,
+	@EnableJS,
+	@JavascriptID,
+	@Link,
+	@LinkFromDisplay,
+	@LinkTarget,
+	@Recommendation,
+	@SearchLink,
+	@StreamScript,
+	@Type
+)
+
+select SCOPE_IDENTITY()
+GO
+
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+-- UPDATE PROCEDURE -------------------------------------------------------------------------------------%>
+/* -------------------------------------------------------------------------------------
+/   {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorUpdate
+/  ------------------------------------------------------------------------------------- */
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS OFF 
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorUpdate
+	@ModuleID int, 
+	@Source nvarchar(100),
+	@Height int, 
+	@Width int, 
+	@File nvarchar(100), 
+	@Image nvarchar(100), 
+	@ID nvarchar(100), 
+	@SearchBar bit, 
+	@BackColor char(8), 
+	@FrontColor char(8), 
+	@LightColor char(8), 
+	@ScreenColor char(8), 
+	@Logo nvarchar(100), 
+	@OverStrech char(10),
+	@ShowEq bit, 
+	@ShowIcons bit, 
+	@Transtion char(10), 
+	@ShowNavigation bit, 
+	@ShowStop bit, 
+	@ShowDigits bit, 
+	@ShowDownload bit, 
+	@UseFullScreen bit, 
+	@AutoScroll bit, 
+	@DisplayHeight int, 
+	@DisplayWidth int, 
+	@ThumbsInPlaylist bit, 
+	@Audio nvarchar(100), 
+	@AutoStart bit, 
+	@BufferLength int, 
+	@Captions char(10), 
+	@FallBack nvarchar(100), 
+	@Repeat char(10),
+	@RotateTime int, 
+	@Shuffle bit, 
+	@Smoothing bit, 
+	@Volume int, 
+	@CallBack varchar(10), 
+	@EnableJS bit, 
+	@JavascriptID varchar(50), 
+	@Link nvarchar(100), 
+	@LinkFromDisplay bit, 
+	@LinkTarget char(10), 
+	@Recommendation nvarchar(100), 
+	@SearchLink nvarchar(100), 
+	@StreamScript nvarchar(100), 
+	@Type char(10) 
+AS
+
+UPDATE {objectQualifier}M2Land_FlashImageRotator SET
+	[ModuleID] = @ModuleID,
+	[Source] = @Source,
+	[Height] = @Height,
+	[Width] = @Width,
+	[File] = @File,
+	[Image] = @Image,
+	[ID] = @ID,
+	[SearchBar] = @SearchBar,
+	[BackColor] = @BackColor,
+	[FrontColor] = @FrontColor,
+	[LightColor] = @LightColor,
+	[ScreenColor] = @ScreenColor,
+	[Logo] = @Logo,
+	[OverStrech] = @OverStrech,
+	[ShowEq] = @ShowEq,
+	[ShowIcons] = @ShowIcons,
+	[Transtion] = @Transtion,
+	[ShowNavigation] = @ShowNavigation,
+	[ShowStop] = @ShowStop,
+	[ShowDigits] = @ShowDigits,
+	[ShowDownload] = @ShowDownload,
+	[UseFullScreen] = @UseFullScreen,
+	[AutoScroll] = @AutoScroll,
+	[DisplayHeight] = @DisplayHeight,
+	[DisplayWidth] = @DisplayWidth,
+	[ThumbsInPlaylist] = @ThumbsInPlaylist,
+	[Audio] = @Audio,
+	[AutoStart] = @AutoStart,
+	[BufferLength] = @BufferLength,
+	[Captions] = @Captions,
+	[FallBack] = @FallBack,
+	[Repeat] = @Repeat,
+	[RotateTime] = @RotateTime,
+	[Shuffle] = @Shuffle,
+	[Smoothing] = @Smoothing,
+	[Volume] = @Volume,
+	[CallBack] = @CallBack,
+	[EnableJS] = @EnableJS,
+	[JavascriptID] = @JavascriptID,
+	[Link] = @Link,
+	[LinkFromDisplay] = @LinkFromDisplay,
+	[LinkTarget] = @LinkTarget,
+	[Recommendation] = @Recommendation,
+	[SearchLink] = @SearchLink,
+	[StreamScript] = @StreamScript,
+	[Type] = @Type
+GO
+
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+
+/* -------------------------------------------------------------------------------------
+/   {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorDelete
+/  ------------------------------------------------------------------------------------- */
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS OFF 
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}M2Land_FlashImageRotatorDelete
+	@ModuleID int
+AS
+
+DELETE FROM {objectQualifier}M2Land_FlashImageRotator
+WHERE
+	[ModuleID] = @ModuleID
+GO
+
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+

@@ -1,0 +1,49 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+/** Drop Stored Procedures **/
+
+drop procedure {databaseOwner}[{objectQualifier}CreateFeedback]
+GO
+
+drop procedure {databaseOwner}[{objectQualifier}GetCategoryFeedback]
+GO
+
+drop procedure {databaseOwner}[{objectQualifier}GetFeedback]
+GO
+
+drop procedure {databaseOwner}[{objectQualifier}GetFeedbackByGUID]
+GO
+
+drop procedure {databaseOwner}[{objectQualifier}UpdateFeedbackStatus]
+GO
+
+drop procedure {databaseOwner}[{objectQualifier}AddFeedbackList]
+GO
+
+drop procedure {databaseOwner}[{objectQualifier}GetFeedbackList]
+GO
+
+drop procedure {databaseOwner}[{objectQualifier}EditFeedbackList]
+GO
+
+drop procedure {databaseOwner}[{objectQualifier}ChangeSortOrder]
+GO
+
+/** Drop Feedback Table **/
+
+DROP TABLE {databaseOwner}[{objectQualifier}Feedback]
+GO
+
+DROP TABLE {databaseOwner}[{objectQualifier}FeedbackList]
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

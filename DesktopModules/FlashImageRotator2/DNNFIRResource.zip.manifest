@@ -1,0 +1,24 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path>Flash/</path>
+      <name>ImageList.xml</name>
+    </file>
+    <file>
+      <path>Flash/</path>
+      <name>imagerotator.swf</name>
+    </file>
+    <file>
+      <path>Flash/</path>
+      <name>swfobject.js</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>EditFlashImageRotator.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>ViewFlashImageRotator.ascx.resx</name>
+    </file>
+  </files>
+</dotnetnuke>

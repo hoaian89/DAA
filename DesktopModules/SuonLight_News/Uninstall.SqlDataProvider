@@ -1,0 +1,80 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Drop FAQs Table **/
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Suonlight_News_Categories] DROP CONSTRAINT [FK_{objectQualifier}SuonLight_News_Categories_{objectQualifier}Portals]
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Suonlight_News_News] DROP CONSTRAINT [FK_{objectQualifier}SuonLight_News_News_{objectQualifier}SuonLight_News_Categories]
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}SuonLight_News_Comment] DROP CONSTRAINT [FK_{objectQualifier}SuonLight_News_Comment_{objectQualifier}Modules]
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Suonlight_News_News] DROP CONSTRAINT [PK_{objectQualifier}SuonLight_News_News]
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Suonlight_News_MetaNews]  DROP  CONSTRAINT [FK_{objectQualifier}SuonLight_News_MetaNews_{objectQualifier}Portals]
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Suonlight_News_Categories] DROP CONSTRAINT [PK_{objectQualifier}SuonLight_News_Categories]
+GO
+
+DROP TABLE {databaseOwner}[{objectQualifier}Suonlight_News_News]
+GO
+
+DROP TABLE {databaseOwner}[{objectQualifier}Suonlight_News_Categories]
+GO
+
+DROP TABLE {databaseOwner}[{objectQualifier}SuonLight_News_Comment]
+GO
+
+DROP TABLE {databaseOwner}[{objectQualifier}Suonlight_News_MetaNews] 
+GO
+/** Drop Stored Procedures **/
+Drop procedure {databaseOwner}{objectQualifier}SuonLight_GetCategories
+
+Drop procedure {databaseOwner}{objectQualifier}SuonLight_GetCategory
+
+Drop procedure {databaseOwner}{objectQualifier}SuonLight_AddCategory
+
+Drop procedure {databaseOwner}{objectQualifier}SuonLight_UpdateCategory
+
+Drop procedure {databaseOwner}{objectQualifier}SuonLight_DeleteCategory
+
+Drop procedure {databaseOwner}{objectQualifier}SuonLight_GetNews
+
+Drop procedure {databaseOwner}{objectQualifier}SuonLight_GetNewsObj
+
+Drop procedure {databaseOwner}{objectQualifier}SuonLight_AddNews
+
+Drop procedure {databaseOwner}{objectQualifier}SuonLight_UpdateNews
+
+Drop procedure {databaseOwner}{objectQualifier}SuonLight_DeleteNews
+
+/** Drop procedure comment **/
+drop procedure {databaseOwner}{objectQualifier}SuonLight_GetComments
+drop procedure {databaseOwner}{objectQualifier}SuonLight_GetComment
+drop procedure {databaseOwner}{objectQualifier}SuonLight_GetChildComment
+drop procedure {databaseOwner}{objectQualifier}SuonLight_AddComment
+drop procedure {databaseOwner}{objectQualifier}SuonLight_RelyComment
+drop procedure {databaseOwner}{objectQualifier}SuonLight_UpdateComment
+drop procedure {databaseOwner}{objectQualifier}SuonLight_DeleteComment
+
+/** Drop procedure Meta **/
+drop procedure {databaseOwner}{objectQualifier}SuonLight_GetMetas
+drop procedure {databaseOwner}{objectQualifier}SuonLight_GetMeta
+drop procedure {databaseOwner}{objectQualifier}SuonLight_AddMeta
+drop procedure {databaseOwner}{objectQualifier}SuonLight_UpdateMeta
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

@@ -1,0 +1,24 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>EditMedia.ascx.resx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>MediaModule.ascx.resx</name>
+    </file>
+    <file>
+      <path />
+      <name>EditMedia.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>MediaModule.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>Module.css</name>
+    </file>
+  </files>
+</dotnetnuke>

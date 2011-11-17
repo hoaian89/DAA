@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ModuleHelp.Text" xml:space="preserve">
+    <value>Add A Parent or Sibling Category 
+
+Add a parent or sibling category to the Help Category module. Parent categories are those which appear in the Category module at all times. These categories can have one or more child categories added below them which is indicated by a Maximize  button. Sibling categories appear at the same level as the selected category.
+1.	Add a Help module or go to an existing Help module. 
+2.	Select Manage Categories from the Category module menu. 
+3.	Select a sibling category for this new category. 
+4.	Click Add Sibling. The new category will be added below the selected category and will be named New Category. 
+5.	At Name, enter the name for the category as it will appear in the module. The default category name is New Category. 
+6.	At Description, enter a description for the category. 
+7.	At Image, select an image for the category. 
+8.	At Keywords, enter one of more key words separated by a comma. E.g. chocolate,cake,recipes, 
+9.	At Visible, select from the following options: 
+a.	Check   the check box if the category is visible to all authorized users. 
+b.	Uncheck   the check box if the Category is visible to Administrators only.
+10.	Click Update. 
+Add A Child Category 
+
+Add a child category to the Help Category module. Child categories are located below a Parent category and can be viewed by clicking on the Maximize  button beside their parent category.
+1.	Add a Help module or go to an existing Help module. 
+2.	Select Manage Categories from the Category module menu. 
+3.	Select a parent category for this new category. 
+4.	Click Add Child. The new category will be added below the selected category and will be named New Category. 
+5.	At Name, enter the name for the category as it will appear in the module. The default category name is New Category. 
+6.	At Description, enter a description for the category. 
+7.	At Image, select an image for the category. 
+8.	At Keywords, enter one of more key words separated by a comma. E.g. chocolate,cake,recipes, 
+9.	At Visible, select from the following options: 
+a.	Check   the check box if the category is visible to all authorized users. 
+b.	Uncheck   the check box if the Category is visible to Administrators only.
+10.	Click Update. </value>
+  </data>
+  <data name="plName.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="plDescription.Text" xml:space="preserve">
+    <value>Description:</value>
+  </data>
+  <data name="plImage.Text" xml:space="preserve">
+    <value>Image:</value>
+  </data>
+  <data name="plKeywords.Text" xml:space="preserve">
+    <value>Keywords:</value>
+  </data>
+  <data name="plVisible.Text" xml:space="preserve">
+    <value>Visible:</value>
+  </data>
+  <data name="plName.Help" xml:space="preserve">
+    <value>Enter the name of the Category.</value>
+  </data>
+  <data name="plDescription.Help" xml:space="preserve">
+    <value>Enter a description of the Category.</value>
+  </data>
+  <data name="plImage.Help" xml:space="preserve">
+    <value>Select an image to be associated with the Category.</value>
+  </data>
+  <data name="plKeywords.Help" xml:space="preserve">
+    <value>Enter one or more Keywords for this category. Separate by using a single comma (e.g. ',').</value>
+  </data>
+  <data name="plVisible.Help" xml:space="preserve">
+    <value>Select whether the Category should be visible to the public</value>
+  </data>
+  <data name="cmdAddNew.Text" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="cmdAddSibling.Text" xml:space="preserve">
+    <value>Add Sibling</value>
+  </data>
+  <data name="cmdAddChild.Text" xml:space="preserve">
+    <value>Add Child</value>
+  </data>
+  <data name="lnkBackToStore.Text" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="cmdUpdate.Text" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="valCategoryNameRequired.Text" xml:space="preserve">
+    <value>&lt;BR&gt;Category Name Required.</value>
+  </data>
+  <data name="ControlTitle_categoryedit.Text" xml:space="preserve">
+    <value>Manage Categories</value>
+  </data>
+  <data name="plParent.Text" xml:space="preserve">
+    <value>Parent:</value>
+  </data>
+  <data name="plParent.Help" xml:space="preserve">
+    <value>Select the Parent Category of this Category.</value>
+  </data>
+  <data name="Delete.Error" xml:space="preserve">
+    <value>You cannot delete a Category that contains Tutorials or Sub Categories. First detach the relevant Tutorials and delete the Sub Categories before deleting the Category.</value>
+  </data>
+  <data name="plViewOrder.Text" xml:space="preserve">
+    <value>View Order:</value>
+  </data>
+  <data name="plViewOrder.Help" xml:space="preserve">
+    <value>Click the up or down arrows to move the item's view order.</value>
+  </data>
+  <data name="cmdDown.Help" xml:space="preserve">
+    <value>Click to move the category down the list.</value>
+  </data>
+  <data name="cmdUp.Help" xml:space="preserve">
+    <value>Click to move the category up the list.</value>
+  </data>
+  <data name="cmdRefresh.Help" xml:space="preserve">
+    <value>Refresh the view order.  Do this if unexpected results occur.</value>
+  </data>
+</root>

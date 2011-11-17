@@ -1,0 +1,53 @@
+﻿<dotnetnuke type="Package" version="5.0">
+  <packages><package name="A_CLass_Manage" type="Module" version="1.0.2">
+  <friendlyName>A_Class_Manage</friendlyName>
+  <description />
+  <owner>
+    <name />
+    <organization />
+    <url />
+    <email />
+  </owner>
+  <license>The license for this package is not currently included within the installation file, please check with the vendor for full license details.</license>
+  <releaseNotes />
+  <components>
+    <component type="Module">
+      <desktopModule>
+        <moduleName>A_CLass_Manage</moduleName>
+        <foldername>A_CLass_Manage</foldername>
+        <businessControllerClass />
+        <supportedFeatures />
+        <moduleDefinitions>
+          <moduleDefinition>
+            <friendlyName>A_Class_Manage</friendlyName>
+            <defaultCacheTime>0</defaultCacheTime>
+            <moduleControls>
+              <moduleControl>
+                <controlKey />
+                <controlSrc>DesktopModules/A_CLass_Manage/A_Class_Manage.ascx</controlSrc>
+                <supportsPartialRendering>False</supportsPartialRendering>
+                <controlTitle />
+                <controlType>View</controlType>
+                <iconFile />
+                <helpUrl />
+                <viewOrder>0</viewOrder>
+              </moduleControl>
+            </moduleControls>
+          </moduleDefinition>
+        </moduleDefinitions>
+      </desktopModule>
+    </component>
+    <component type="File">
+      <files>
+        <basePath>DesktopModules\A_CLass_Manage</basePath>
+        <file>
+          <name>A_Class_Manage.ascx</name>
+        </file>
+        <file>
+          <name>A_Class_Manage.ascx.cs</name>
+        </file>
+      </files>
+    </component>
+  </components>
+</package></packages>
+</dotnetnuke>

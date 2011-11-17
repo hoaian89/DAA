@@ -1,0 +1,71 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              Help               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+/* Insert here the code to create tables and stored procs   */
+
+if exists (select * from {databaseOwner}sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Help_CategorySetInvisible]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}Help_CategorySetInvisible]
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Help_CategorySetVisibility]
+
+@CategoryID int,
+@Visibility int
+
+AS
+
+UPDATE {databaseOwner}{objectQualifier}Help_Category
+
+SET 
+		[Visible] = @Visibility
+
+WHERE 	[CategoryID] = @CategoryID
+
+GO
+
+
+ALTER PROCEDURE {databaseOwner}[{objectQualifier}Help_TutorialAddToCategory]
+(
+    @TutorialId int,
+    @CategoryId int,
+	@ViewOrder int
+)
+As
+
+INSERT INTO {databaseOwner}{objectQualifier}Help_TutorialCategory(
+	[TutorialId],
+	[CategoryId],
+	[ViewOrder]
+)VALUES(
+	@TutorialId,
+	@CategoryId,
+	@ViewOrder
+)
+
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Help_GetCategory]
+
+@CategoryID int
+
+AS
+
+SELECT * FROM {databaseOwner}{objectQualifier}Help_Category
+
+WHERE 	[CategoryID] = @CategoryID
+
+GO
+
+
+
+
+

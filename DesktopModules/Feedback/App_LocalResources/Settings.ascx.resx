@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plSendTo.Text" xml:space="preserve">
+    <value>Send To</value>
+  </data>
+  <data name="plSendTo.Help" xml:space="preserve">
+    <value>Enter the email address of the recipient of this message</value>
+  </data>
+  <data name="plWidth.Text" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="plWidth.Help" xml:space="preserve">
+    <value>Acceptable values can be in pixels or percentage. If using percentage, enter "%" at the end, while for others simply enter numeric value</value>
+  </data>
+  <data name="plRows.Text" xml:space="preserve">
+    <value>Rows</value>
+  </data>
+  <data name="plRows.Help" xml:space="preserve">
+    <value>Enter the number of rows to display for the body textbox</value>
+  </data>
+  <data name="valWidth.ErrorMessage" xml:space="preserve">
+    <value>&lt;br/&gt;Width can be defined either in percentage or pixel format. The value entered is invalid.</value>
+  </data>
+  <data name="valRows.ErrorMessage" xml:space="preserve">
+    <value>&lt;br/&gt;Rows Must Be A Valid Integer</value>
+  </data>
+  <data name="ControlTitle_settings.Text" xml:space="preserve">
+    <value>Feedback Settings</value>
+  </data>
+  <data name="ModuleHelp.Text" xml:space="preserve">
+    <value>&lt;h1&gt;About The Feedback Settings&lt;/h1&gt;
+&lt;p&gt;The Feedback Module offers authorized site users the ability to direct a message to a defined email location.&amp;nbsp; There are&amp;nbsp;multiple Feedback Settings that control the display and action performed within the module.&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;br /&gt;
+&lt;strong&gt;&lt;br /&gt;
+Send To &lt;/strong&gt;&amp;ndash; this is the email address where the information is sent. The email must be in a valid email format.&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Width &lt;/strong&gt;&amp;ndash; set the number of pixels across the defined module area for the body of the message text.&amp;nbsp; Note: be careful to keep this to&amp;nbsp;value within the defined width of the panel where the module is placed, otherwise there may not be enough room to actually use the desired setting.&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rows &lt;/strong&gt;&amp;ndash; set the number of rows of text available for the body of the message text. Note: Again, be careful to keep this&amp;nbsp;value within the defined height of the panel where the module is placed, otherwise there may not be enough room to actually use the desired setting.&lt;br /&gt;
+&lt;strong&gt;&lt;br /&gt;
+Send Copy &lt;/strong&gt;&amp;ndash; Enabling this option allows a copy of the feedback submitted to be sent to the sender's email address.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Optout&lt;/strong&gt; - This option allows the sender to choose whether to receive a copy of the feedback submitted. If this option is not available to the user and the Send Copy option is checked, the user will always receive a copy of the feedback submitted.&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Category&lt;/strong&gt; - Select a category to which this feedback should be grouped within. Categories are created via the Feedback Lists&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category List Visible&lt;/strong&gt; - Determines whether the categories to choose from are visible to the user who is filling the form.&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Use Category Values as Send To&lt;/strong&gt; - &lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;If the category value contains a valid email address, it is used as the email address of the recipient of this message,. otherwise the value of &amp;quot;Send to&amp;quot; will be used.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;&lt;strong&gt;Subject&lt;/strong&gt; - The subject for this feedback - this is also sent as the subject in the email that is sent out.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;&lt;strong&gt;Subject List Visible&lt;/strong&gt; - User is presented with a list of subjects to choose from. (Note that Subject lists can be created via the Feedback Lists page similar to Feedback Categories)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;&lt;strong&gt;Can Edit Subject&lt;/strong&gt; - User is presented with a text box for the subject field and can make changes to the values in this field.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;&lt;strong&gt;Subject Field Hidden&lt;/strong&gt; - The administrator can setup a Subject via the Subject List and select this option to disable the user from changing the values.&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Moderated&lt;/strong&gt; - Determines whether the feedback submitted needs to be approved prior to making it visible on the website.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;&lt;strong&gt;Send Email Asynchronously&lt;/strong&gt;&amp;nbsp; - if this option is selected, the email that is generated is sent on a separate thread and the user gets control of the page immediately upon clicking on the submit button.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;&lt;strong&gt;Use Captcha&amp;nbsp; -&lt;/strong&gt; enabling this option prevents Spam BOTS from hijacking your Feedback Form.&lt;/span&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="plOptout.Text" xml:space="preserve">
+    <value>Optout</value>
+  </data>
+  <data name="plOptout.Help" xml:space="preserve">
+    <value>If checked, the sender has the option of choosing whether to receive a copy of the feedback submitted. If this option is unchecked but Send Copy is checked then sender will receive a copy of the feedback submitted.</value>
+  </data>
+  <data name="plCategory.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="plModerationCategory.Text" xml:space="preserve">
+    <value>Moderation Category</value>
+  </data>
+  <data name="plModerationCategory.Help" xml:space="preserve">
+    <value>If you want to moderate a specific category, select it here, otherwise all categories will be displayed.</value>
+  </data>
+  <data name="plCategory.Help" xml:space="preserve">
+    <value>Select the category this message belongs to&lt;br&gt;(categories are created via the Feedback Lists)</value>
+  </data>
+  <data name="plCategorySelectable.Text" xml:space="preserve">
+    <value>Category List Visible</value>
+  </data>
+  <data name="plCategorySelectable.Help" xml:space="preserve">
+    <value>Can the sender choose a category?</value>
+  </data>
+  <data name="plSubjectSelectable.Text" xml:space="preserve">
+    <value>Subject List Visible</value>
+  </data>
+  <data name="plSubjectSelectable.Help" xml:space="preserve">
+    <value>User is presented with a drop down list of Subjects</value>
+  </data>
+  <data name="plSubject.Text" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="plSubject.Help" xml:space="preserve">
+    <value>The subject for this feedback</value>
+  </data>
+  <data name="plSubjectEditable.Text" xml:space="preserve">
+    <value>Can Edit Subject</value>
+  </data>
+  <data name="plSubjectEditable.Help" xml:space="preserve">
+    <value>User is presented with a text box for the Subject field.</value>
+  </data>
+  <data name="plSubjectHidden.Text" xml:space="preserve">
+    <value>Subject Field Hidden</value>
+  </data>
+  <data name="plSubjectHidden.Help" xml:space="preserve">
+    <value>The Subject Field is hidden from the user.</value>
+  </data>
+  <data name="plModerated.Text" xml:space="preserve">
+    <value>Moderated</value>
+  </data>
+  <data name="plModerated.Help" xml:space="preserve">
+    <value>If checked, lets the administrator of this module authorize the feedback for the guestbook</value>
+  </data>
+  <data name="plNotify.Text" xml:space="preserve">
+    <value>Notify</value>
+  </data>
+  <data name="plNotify.Help" xml:space="preserve">
+    <value>Would you like to be notified of the feedback?</value>
+  </data>
+  <data name="plAsync.Text" xml:space="preserve">
+    <value>Send Email Asynchronously</value>
+  </data>
+  <data name="plAsync.Help" xml:space="preserve">
+    <value>If this option is selected then the site sends the email Asynchronously?</value>
+  </data>
+  <data name="plAllowPaging.Text" xml:space="preserve">
+    <value>Allow Paging</value>
+  </data>
+  <data name="plAllowPaging.Help" xml:space="preserve">
+    <value>Would you like to enable paging on the guestbook?</value>
+  </data>
+  <data name="plPageSize.Text" xml:space="preserve">
+    <value>Page Size</value>
+  </data>
+  <data name="plPageSize.Help" xml:space="preserve">
+    <value>If you have paging enabled, this is the default pagesize of the guestbook pages</value>
+  </data>
+  <data name="plSendCopy.Text" xml:space="preserve">
+    <value>Send Copy</value>
+  </data>
+  <data name="plSendCopy.Help" xml:space="preserve">
+    <value>Would you like to send a copy of this to the user</value>
+  </data>
+  <data name="valSendTo.ErrorMessage" xml:space="preserve">
+    <value>&lt;br/&gt;Email Must be Valid</value>
+  </data>
+  <data name="valSendFrom.ErrorMessage" xml:space="preserve">
+    <value>&lt;br/&gt;Email Must be Valid</value>
+  </data>
+  <data name="plUseCaptcha.Text" xml:space="preserve">
+    <value>Use Captcha</value>
+  </data>
+  <data name="plUseCaptcha.Help" xml:space="preserve">
+    <value>Determines whether to use a captcha control when submitting the feedback?</value>
+  </data>
+  <data name="plUseCategoryAsEmail.Help" xml:space="preserve">
+    <value>If the category value contains a valid email address, it is used as the email address of the recipient of this message,. otherwise the value of "Send to" will be used.</value>
+  </data>
+  <data name="plUseCategoryAsEmail.Text" xml:space="preserve">
+    <value>Use Category value as Send To</value>
+  </data>
+  <data name="plModerationRoles.Text" xml:space="preserve">
+    <value>Moderation Roles</value>
+  </data>
+  <data name="plModerationRoles.Help" xml:space="preserve">
+    <value>Select the roles which will be allowed to moderate feedback posts</value>
+  </data>
+  <data name="plListRoles.Text" xml:space="preserve">
+    <value>List Roles</value>
+  </data>
+  <data name="plListRoles.Help" xml:space="preserve">
+    <value>Select the roles which will be allowed to add/edit Feedback Lists</value>
+  </data>
+  <data name="plSendFrom.Help" xml:space="preserve">
+    <value>If you enter a value here, this is used as the default From email address instead of whatever the user enters on the form. This is useful when Spam filters are blocking emails.</value>
+  </data>
+  <data name="plSendFrom.Text" xml:space="preserve">
+    <value>Send From</value>
+  </data>
+  <data name="plRequireNameField.Help" xml:space="preserve">
+    <value>Determines whether user has to enter some value in the Name field before they can click on Submit</value>
+  </data>
+  <data name="plRequireNameField.Text" xml:space="preserve">
+    <value>Name Field Required</value>
+  </data>
+</root>

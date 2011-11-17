@@ -1,0 +1,17 @@
+﻿Reports Module 5.1 for DotNetNuke 5.0.1
+
+Required DotNetNuke Version: 5.0.1 or above
+
+NOTE: The UDT Data Source is NOT compatible with Form and List Module version 5.0 or DotNetNuke 5.0, therefore it has been removed from the package.  A future version of the UDT Data Source will add support for DNN 5.0 and FnL 5.0
+
+This is a minor bug-fix release of the Reports Module.  There are two main new features in the module:
+
+* XSLT Extension Objects - CLR objects can now be provided to the XSLT Visualizer to use as XSLT Extension Objects. These objects must have a parameter-less constructor and MAY (but are not required to) implement the IXsltExtensionObject interface (found in DotNetNuke.Modules.Reports.dll) in order to receive additional context information.
+* Simple URL Parameter system - A simple URL parameter system has been added which allows users to provide a list of QueryString parameters which will be added to the query.  The parameter names are in the following format: @url_[QueryString Parameter Name].  Only the parameters specified in the "Allowed URL Parameters" section will be added.
+
+Major Bugs fixed this release include:
+
+* Search Indexing fails due to an exception - When there is an error in a Data Source, that exception is also thrown by the Search Indexer. Since Reports Module Exceptions were localized, through the Message property, when the Scheduler caught the exception thrown by the module, it would attempt to localize the text and fail (since there is no HttpContext). This has been corrected so that Data Source errors are no longer masked.
+* Exception thrown when opening "Manage Add-Ins" page on DNN 5.0 - The DotNetNuke Extensions Installer API was moved to a different namespace in 5.0. The Reports module has been updated to reflect this change.
+
+For more details, see the project Change Log [http://support.dotnetnuke.com/project/ChangeLog.aspx?PROJID=36]

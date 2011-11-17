@@ -1,0 +1,13 @@
+﻿.dnnmedia_wrapper { width:98%; }
+.dnnmedia_image { border:0px solid #ffffff; }
+.dnnmedia_left, .dnnmedia_left * { text-align:left; }
+.dnnmedia_right, .dnnmedia_right * { text-align:right; }
+.dnnmedia_center, .dnnmedia_center * { text-align:center; }
+.dnnmedia_wmp, .dnnmedia_wmp * { position:relative !important; z-index:2 !important; }
+/*
+options view
+*/
+#tblDnnMediaOptions { width:100%; }
+#tblDnnMediaOptions tr td { vertical-align:top; padding:2px; }
+#tblDnnMediaOptions tr td.SubHead { width:125px; }
+.dnnmedia_textbox { width:275px; }

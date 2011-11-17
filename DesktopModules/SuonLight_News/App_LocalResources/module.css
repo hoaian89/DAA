@@ -1,0 +1,40 @@
+﻿div.news_item_c2 a:link
+{
+	color:Black;
+	font-size:large;
+	text-decoration:none;
+	}
+	
+div.news_item_c1
+{	
+	width:13%;
+	float:left;
+	}
+div.news_item_c2
+{
+	width:87%;	
+	}
+	
+div.news_item
+{
+    margin:10px 0px 10px 0px;
+    }
+div.clearb
+{
+	clear:both;
+	margin-top:30px;
+	}
+	
+hr
+{
+    clear:both;
+    }	
+.title
+{
+    font-family:Times New Roman;    
+}
+
+.moduleTitle
+{
+    color:White;
+    }

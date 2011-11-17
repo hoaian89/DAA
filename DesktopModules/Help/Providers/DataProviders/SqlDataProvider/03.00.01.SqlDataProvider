@@ -1,0 +1,51 @@
+﻿IF  EXISTS (SELECT * FROM {databaseOwner}sysobjects WHERE id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}Help_GetTutorialsByModule]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}Help_GetTutorialsByModule]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Help_GetTutorialsByModule] 
+	@ModuleId	INT
+AS
+
+SELECT		[ProductImage],
+			[Featured],
+			[KeyWords],
+			[DownloadName],
+			[ShortDesc],
+			[Archive],
+			[Description],
+			[TutorialID],
+			[Title],
+			[LastUpdated],
+			[TutorialGUID],
+			[ModuleID]
+FROM		{databaseOwner}{objectQualifier}Help_Tutorials
+WHERE		ModuleID = @ModuleId
+
+
+GO
+
+
+
+ALTER PROCEDURE {databaseOwner}{objectQualifier}Help_UpdateTutorial
+	@TutorialID int, 
+	@Title nvarchar(250), 
+	@ProductImage nvarchar(150), 
+	@Featured bit, 
+	@KeyWords nvarchar(200), 
+	@DownloadName nvarchar(200), 
+	@ShortDesc nvarchar(500), 
+	@Archive bit, 
+	@Description ntext 
+AS
+
+UPDATE		{databaseOwner}[{objectQualifier}Help_Tutorials]
+SET			[Title] = @Title,
+			[ProductImage] = @ProductImage,
+			[Featured] = @Featured,
+			[KeyWords] = @KeyWords,
+			[DownloadName] = @DownloadName,
+			[ShortDesc] = @ShortDesc,
+			[Archive] = @Archive,
+			[Description] = @Description,
+			[LastUpdated] = GETDATE()
+WHERE		[TutorialID] = @TutorialID

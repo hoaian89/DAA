@@ -1,0 +1,57 @@
+div.news_item_c2 a:link
+{
+	color:Black;
+	font-size:large;
+	text-decoration:none;
+	}
+	
+div.news_item_c1
+{		
+	float:left;
+	margin:0px 10px 5px 0px;    
+	}
+a.lnkimg img
+{
+    width:100px;
+    height:100px;  
+}
+
+div.news_item_c2
+{
+	width:100%;	
+	}
+	
+div.news_item
+{
+    margin:5px 0px 5px 0px;
+    }
+div.clearb
+{
+	clear:both;
+	margin-top:30px;
+	}
+	
+hr
+{
+    clear:both;
+    }	
+.title
+{
+    font-family:Times New Roman;    
+}
+
+.moduleTitle
+{
+    color:White;
+    }
+a:link
+{
+    color:White;
+}
+
+div.news_item_c2 a:link {
+    color: Black;
+    font-size: large;
+    text-decoration: none;
+    font-family:Times New Roman;
+}

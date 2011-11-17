@@ -1,0 +1,250 @@
+﻿/* ================================
+    CSS STYLES FOR DNN Event Module 
+   ================================
+*/
+.Eventtooltipheader, .Eventtooltipbody {
+	width: 300px;
+	z-index: 99;
+	font-size: 10px;
+	font-family: Arial;
+	padding: 5px;
+}
+.Eventtooltipheader {
+	border: #FF6600 1px solid;
+	background-color: #FF6600;
+	color: #FFFFFF;
+	font-weight: 700;
+	font-size: 11px;
+}
+.Eventtooltipbody {
+	border-left: #FF6600 1px solid;
+	border-right: #FF6600 1px solid;
+	border-bottom: #FF6600 1px solid;
+	background-color: #fff;
+}
+.Eventtooltipbody hr {
+	width: 100%;
+	color: #000000;
+	background-color: #FFCC99;
+	height: 1px;
+	border: 0;
+}
+.ThemeEvents-Orange .Event {
+	table-layout: fixed;
+	width: 100%;
+	font-size: 9px;
+	color: #FFFFFF;
+	font-family: Verdana;
+	text-align: center;
+	border-right: #FF6600 2px solid;
+	border-top: #FF6600 1px solid;
+	border-left: #FF6600 2px solid;
+	border-bottom: #FF6600 2px solid;
+	white-space: normal;
+}
+.ThemeEvents-Orange .EventTitle, .ThemeEvents-Orange .EventTitle td {
+	font-weight: 700;
+	font-size: 14px;
+	width: 100%;
+	color: #FF0000;
+	height: 20px;
+	text-align: center;
+	background-color: #FFFFCC;
+	font-family: Verdana;
+	border-bottom: 0 #FF6600 solid;
+}
+.ThemeEvents-Orange .EventDayHeader {
+	font-weight: 700;
+	font-size: 12px;
+	height: 16px;
+	background-color: #FFCC99;
+	vertical-align: middle;
+	font-family: Verdana;
+	border: 1px #FF6600 solid;
+}
+.ThemeEvents-Orange .EventDay, .ThemeEvents-Orange .EventDayEvents {
+	font-size: 10px;
+	text-align: left;
+	height: 100px;
+	vertical-align: top;
+	color: #000000;
+	font-family: Verdana;
+	background-color: #FF6600;
+	border: 1px #FF6600 solid;
+}
+.ThemeEvents-Orange .EventDayScroll {
+	width: 100%;
+	height: 88%;
+	overflow: auto;
+	position: static;
+	font-weight: bolder;
+	background-color: #fff;
+}
+.ThemeEvents-Orange .EventOtherMonthDay {
+	color: gray;
+	background-color: #FFCC99;
+}
+.ThemeEvents-Orange .EventTodayDay {
+	font-weight: 700;
+	color: #000000;
+	background-color: #FF9933;
+	border: 2px #FF0000 solid;
+}
+.ThemeEvents-Orange .EventSelectedDay {
+	border: red 2px solid;
+	text-align: left;
+	font-size: 9px;
+}
+.ThemeEvents-Orange .EventSelector {
+	background-color: #FF6600;
+}
+.ThemeEvents-Orange .EventSelector a, .ThemeEvents-Orange .EventSelector a:visited, .ThemeEvents-Orange .EventSelector a:hover {
+	color: #FF0000;
+	text-decoration: none;
+}
+.ThemeEvents-Orange .WeekTable table {
+	table-layout: auto;
+	width: 100%;
+	font-size: 10px;
+	color: #000;
+	font-family: Verdana;
+	text-align: center;
+	border: #FF6600 1px solid;
+}
+.ThemeEvents-Orange .WeekTable table td, .ThemeEvents-Orange .WeekTable table th {
+	border: 0;
+	padding: 3px;
+}
+.ThemeEvents-Orange .WeekItem {
+	text-align: center;
+	font-family: verdana,helvetica,arial;
+	font-size: 9px;
+	background-color: #FFF;
+	font-weight: 400;
+	background-color: #FFCC99;
+	border: 1px #FF6600 solid;
+}
+.ThemeEvents-Orange .WeekDay {
+	font-weight: 700;
+	font-size: 9px;
+	color: #FF6600;
+	font-family: verdana,helvetica,arial;
+	background-color: #FFCC99;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px #FF6600 solid;
+}
+.ThemeEvents-Orange .WeekBackground {
+	font-family: verdana,helvetica,arial;
+	font-size: 9px;
+	background-color: #fff;
+	border: 1px #FF6600 dotted;
+}
+.ThemeEvents-Orange .WeekTitle {
+	font-family: verdana,helvetica,arial;
+	font-size: 9px;
+	color: #000;
+	height: 15%;
+	text-align: center;
+	background-color: #FF9933;
+	width: 11%;
+	border: 1px #FF6600 solid;
+}
+.ThemeEvents-Orange .WeekOfTitle {
+	font-weight: 700;
+	font-size: 10px;
+	width: 100%;
+	color: #333333;
+	font-family: verdana,helvetica,arial;
+	text-align: center;
+	vertical-align: middle;
+}
+.ThemeEvents-Orange .WeekNextPrev {
+	font-weight: 700;
+	font-family: verdana,helvetica,arial;
+	font-size: 10px;
+	width: 100%;
+	color: #606060;
+	text-align: center;
+	vertical-align: middle;
+}
+.ThemeEvents-Orange .WeekRangeheader {
+	text-align: center;
+	vertical-align: middle;
+	font-family: verdana,helvetica,arial;
+	font-size: 9px;
+	background-color: #FFCC99;
+	border: none;
+}
+.ThemeEvents-Orange .ListTable {
+	width: 100%;
+}
+.ThemeEvents-Orange .ListDate {
+	font-size: 10px;
+	font-family: verdana,helvetica,arial;
+	text-align: left;
+	vertical-align: top;
+	width: 100px;
+}
+.ThemeEvents-Orange .ListLink {
+	font-weight: 700;
+	font-size: 10px;
+	font-family: verdana,helvetica,arial;
+	text-align: left;
+	vertical-align: top;
+}
+.ThemeEvents-Orange .ListHeader {
+	font-size: 12px;
+	font-weight: 700;
+	color: #000;
+	background-color: #FFCC99;
+	font-family: verdana,helvetica,arial;
+	height: 32px;
+	text-align: left;
+	vertical-align: middle;
+}
+.ThemeEvents-Orange .ListDuration {
+	font-size: 10px;
+	font-family: verdana,helvetica,arial;
+	text-align: center;
+	vertical-align: top;
+	width: 60px;
+}
+.ThemeEvents-Orange .ListDataGrid {
+	border-right: #FF6600 2px solid;
+	border-top: #FF6600 1px solid;
+	border-left: #FF6600 2px solid;
+	border-bottom: #FF6600 2px solid;
+	background-color: #FFCC99;
+}
+.ThemeEvents-Orange .ListDataGrid td {
+	border-color: #FF6600;
+	border-style: dotted;
+	border-width: 1px;
+}
+.ThemeEvents-Orange .ListEdit {
+	text-align: center;
+	vertical-align: top;
+	width: 1px;
+}
+.ThemeEvents-Orange .EventNextPrev, .ThemeEvents-Orange .EventNextPrev a:link, .ThemeEvents-Orange .EventNextPrev a, .ThemeEvents-Orange .EventNextPrev a:visited, .ThemeEvents-Orange .EventNextPrev a:hover {
+	font-size: 12px;
+	color: #666666;
+	padding: 0 0.5em;
+}
+.ThemeEvents-Orange .EventWeekendDay, .ThemeEvents-Orange .ListAlternate {
+	background-color: #F5F5F5;
+}
+.ThemeEvents-Orange .ListTitle, .ThemeEvents-Orange .ListDescription, .ThemeEvents-Orange .ListCustomField1, .ThemeEvents-Orange .ListCustomField2 {
+	font-size: 10px;
+	font-family: verdana,helvetica,arial;
+	text-align: left;
+	vertical-align: top;
+}
+.ThemeEvents-Orange .ListCategory, .ThemeEvents-Orange .ListLocation {
+	font-size: 10px;
+	font-family: verdana,helvetica,arial;
+	text-align: left;
+	vertical-align: top;
+	width: 60px;
+}

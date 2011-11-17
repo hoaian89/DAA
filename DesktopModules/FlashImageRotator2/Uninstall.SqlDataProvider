@@ -1,0 +1,44 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Drop FAQs Table **/
+
+ALTER TABLE {databaseOwner}[{objectQualifier}M2Land_FlashImageRotator] DROP CONSTRAINT [FK_{objectQualifier}FlashImageRotator_{objectQualifier}Modules]
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}M2Land_FlashImageRotator] DROP CONSTRAINT [PK_{objectQualifier}M2Land_FlashImageRotator]
+GO
+
+DROP INDEX {databaseOwner}[{objectQualifier}M2Land_FlashImageRotator].[IX_{objectQualifier}M2Land_FlashImageRotator]
+GO
+
+DROP TABLE {databaseOwner}[{objectQualifier}M2Land_FlashImageRotator]
+GO
+
+/** Drop Stored Procedures **/
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}M2Land_FlashImageRotatorGet]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}M2Land_FlashImageRotatorGetAll]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}M2Land_FlashImageRotatorAdd]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}M2Land_FlashImageRotatorUpdate]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}M2Land_FlashImageRotatorDelete]
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

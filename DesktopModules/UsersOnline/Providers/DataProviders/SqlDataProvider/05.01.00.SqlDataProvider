@@ -1,0 +1,102 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}DNNUOL_GetOnlineUsers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}DNNUOL_GetOnlineUsers
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}DNNUOL_GetOnlineUserStatistics]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}DNNUOL_GetOnlineUserStatistics
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}DNNUOL_GetOnlineUserStatistics
+
+@PortalID  int,
+@IncludeHosts bit
+AS
+-- Anonymous User Count
+SELECT count(UserID) 
+FROM  {databaseOwner}{objectQualifier}AnonymousUsers
+WHERE PortalId = @PortalID
+
+-- Users Online Count
+IF @IncludeHosts = 0
+BEGIN
+	SELECT count(UO.UserID) 
+	FROM {databaseOwner}{objectQualifier}UsersOnline UO 
+	INNER JOIN {databaseOwner}{objectQualifier}Users U on UO.UserID = U.UserID
+	WHERE UO.PortalId = @PortalID AND U.IsSuperUser = 0
+END
+ELSE
+BEGIN
+SELECT count(UserID) 
+	FROM {databaseOwner}{objectQualifier}UsersOnline
+	WHERE PortalId = @PortalID
+END
+
+-- Last User Registered
+SELECT UserID, UserName, DisplayName, FirstName, LastName, FirstName + ' ' + LastName AS FullName
+FROM   {databaseOwner}{objectQualifier}Users
+WHERE  UserID = (select top 1 UserId from {databaseOwner}{objectQualifier}UserPortals where PortalID = @PortalID AND Authorised = 1 AND IsDeleted = 0 order by UserPortalId desc, UserID desc)
+
+-- Membership Count
+SELECT count(UserID) 
+FROM   {databaseOwner}{objectQualifier}UserPortals
+WHERE PortalId = @PortalID AND Authorised = 1
+
+-- Members in last day
+SELECT count(UserID) 
+FROM {databaseOwner}{objectQualifier}UserPortals
+WHERE PortalId = @PortalID and CreatedDate > DateAdd(d, -1, GetDate()) AND IsDeleted = 0 AND Authorised = 1
+
+-- Members day before
+SELECT count(UserID)
+FROM {databaseOwner}{objectQualifier}UserPortals
+WHERE PortalId = @PortalID and CreatedDate > DateAdd(d, -2, GetDate()) and CreatedDate < DateAdd(d, -1, GetDate()) AND IsDeleted = 0 AND Authorised = 1
+
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}DNNUOL_GetOnlineUsers
+@PortalID int,
+@IncludeHosts bit
+AS
+IF @IncludeHosts = 0
+BEGIN
+SELECT 
+	UO.UserID,
+	U.UserName,
+	U.DisplayName,
+	U.FirstName, 
+	U.LastName, 
+	U.FirstName + ' ' + U.LastName AS FullName
+FROM
+	{databaseOwner}{objectQualifier}UsersOnline UO INNER JOIN {databaseOwner}{objectQualifier}Users U ON UO.UserID = U.UserID INNER JOIN {databaseOwner}{objectQualifier}UserPortals UP ON U.UserID = UP.UserID
+WHERE
+	UO.PortalID = @PortalID AND UO.UserID = U.UserID AND UP.IsDeleted = 0 AND UP.Authorised = 1 AND U.IsSuperUser = 0 -- Inner Join takes care of SU = 0, but for sanity.
+END
+ELSE
+BEGIN
+SELECT DISTINCT
+	UO.UserID,
+	U.UserName,
+	U.DisplayName,
+	U.FirstName, 
+	U.LastName, 
+	U.FirstName + ' ' + U.LastName AS FullName
+FROM
+	{databaseOwner}{objectQualifier}UsersOnline UO INNER JOIN {databaseOwner}{objectQualifier}Users U ON UO.UserID = U.UserID, {databaseOwner}{objectQualifier}UserPortals UP
+WHERE
+	UO.PortalID = @PortalID AND UO.UserID = U.UserID AND UP.IsDeleted = 0 AND UP.Authorised = 1
+END
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

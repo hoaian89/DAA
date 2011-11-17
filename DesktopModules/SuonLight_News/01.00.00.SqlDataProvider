@@ -1,0 +1,319 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Create Table **/
+
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_News_Categories]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	BEGIN
+		CREATE TABLE {databaseOwner}[{objectQualifier}Suonlight_News_Categories](
+		[CatID] [int] IDENTITY(1,1) NOT NULL,
+		[Category] [nvarchar](255) NOT NULL,
+		[ParentID] [int] NULL,
+		[Description] [nvarchar](50) NULL,
+		[Order] [int] NULL,
+		[PortalID] [int] NOT NULL,
+		 CONSTRAINT [PK_{objectQualifier}SuonLight_News_Categories] PRIMARY KEY CLUSTERED 
+		(
+			[CatID] ASC
+		)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+		) ON [PRIMARY]
+
+		ALTER TABLE {databaseOwner}[{objectQualifier}Suonlight_News_Categories]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}SuonLight_News_Categories_{objectQualifier}Portals] FOREIGN KEY([PortalID])
+		REFERENCES {databaseOwner}[{objectQualifier}Portals] ([PortalID])		
+	END
+GO
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_News_News]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	BEGIN
+		CREATE TABLE {databaseOwner}[{objectQualifier}SuonLight_News_News](
+		[ID] [int] IDENTITY(1,1) NOT NULL,
+		[CatID] [int] NULL,
+		[Title] [nvarchar](250) NULL,
+		[Description] [nvarchar](2000) NULL,
+		[Content] [ntext] NULL,
+		[CreatedDate] [datetime] NULL,
+		[CreatedByUser] [int] NULL,
+		[ModifiedDate] [datetime] NULL,
+		[ModifiedByUser] [int] NULL,
+		[TotalView] [int] NULL,
+		[ImageUrl] [nvarchar](250) NULL,
+		[Published] [bit] NULL,
+		[Keywords] [nvarchar] (250) NULL,
+		 CONSTRAINT [PK_{objectQualifier}SuonLight_News_News] PRIMARY KEY CLUSTERED 
+		(
+			[ID] ASC
+		)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+		) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+		ALTER TABLE {databaseOwner}[{objectQualifier}SuonLight_News_News]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}SuonLight_News_News_{objectQualifier}SuonLight_News_Categories] FOREIGN KEY([CatID])
+		REFERENCES {databaseOwner}[{objectQualifier}Suonlight_News_Categories] ([CatID])
+	END
+GO
+
+
+/** Drop Existing Stored Procedures **/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_GetCategories]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_GetCategories
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_GetCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_GetCategory
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_AddCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_AddCategory
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_UpdateCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_UpdateCategory
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_DeleteCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_DeleteCategory
+GO
+
+-------------
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_GetNews]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_GetNews
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_GetNewsObj]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_GetNewsObj
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_AddNews]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_AddNews
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_UpdateNews]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_UpdateNews
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_DeleteNews]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_DeleteNews
+GO
+
+
+-------------
+/** Create Stored Procedures **/
+CREATE PROCEDURE {databaseOwner}{objectQualifier}SuonLight_GetCategories	
+	@PortalID int = 0	
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	Select CatID, Category, ParentID, [Description], [Order], PortalID
+	From {databaseOwner}{objectQualifier}Suonlight_News_Categories
+	Where PortalID = @PortalID
+END
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}SuonLight_GetCategory		
+	@CatID int
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+    
+	Select CatID, Category, ParentID, [Description], [Order], PortalID
+	From {databaseOwner}{objectQualifier}Suonlight_News_Categories
+	Where CatID = @CatID
+END
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}SuonLight_AddCategory	
+	@PortalID int = 0,
+	@Category nvarchar(255) = 'NewCategory',
+	@ParentID int,
+	@Description nvarchar(50),
+	@Order int  = 0	
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+    
+	Insert into {databaseOwner}{objectQualifier}Suonlight_News_Categories
+	(Category, ParentID, [Description], [Order], PortalID)
+	Values
+	(@Category,@ParentID,@Description,@Order,@PortalID)
+	
+END
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}SuonLight_UpdateCategory	
+	@CatID int = 0,
+	@Category nvarchar(255),
+	@ParentID int,
+	@Description nvarchar(50),
+	@Order int	
+AS
+BEGIN
+	SET NOCOUNT ON;
+	
+	Update {databaseOwner}{objectQualifier}Suonlight_News_Categories
+	Set Category = @Category,
+		ParentID = @ParentID,
+		[Description] = @Description,
+		[Order] = @Order
+	Where CatID = @CatID		
+END
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}SuonLight_DeleteCategory	
+	@CatID int = 0
+AS
+BEGIN
+	SET NOCOUNT ON;
+	
+	delete from {databaseOwner}{objectQualifier}Suonlight_News_Categories	
+	where CatID = @CatID		
+END
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}SuonLight_GetNews		
+	@CatID int = 0,	
+	@Published bit = null
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+
+	If (@CatID = 0)
+	Begin
+		IF (@Published is null)
+		Begin
+			Select n.ID, c.CatID, n.Title, n.[Description], n.Content, 
+			n.CreatedDate, n.CreatedByUser, n.ModifiedDate, n.ModifiedByUser,
+			n.TotalView, n.ImageUrl, n.Published, n.Keywords
+			From ({databaseOwner}{objectQualifier}SuonLight_News_News n inner join {databaseOwner}{objectQualifier}SuonLight_News_Categories c
+			on n.CatID = c.CatID) inner join {databaseOwner}{objectQualifier}Portals p on p.PortalID = c.PortalID  		
+			order by ModifiedDate
+		End
+		Else
+		Begin
+			Select n.ID, c.CatID, n.Title, n.[Description], n.Content, 
+			n.CreatedDate, n.CreatedByUser, n.ModifiedDate, n.ModifiedByUser,
+			n.TotalView, n.ImageUrl, n.Published, n.Keywords
+			From ({databaseOwner}{objectQualifier}SuonLight_News_News n inner join {databaseOwner}{objectQualifier}SuonLight_News_Categories c
+			on n.CatID = c.CatID) inner join {databaseOwner}{objectQualifier}Portals p on p.PortalID = c.PortalID  		
+			Where Published = @Published
+			order by ModifiedDate
+		End
+	End
+	Else
+	Begin
+		If (@Published is null)
+		Begin
+			Select ID, CatID, Title, [Description], Content, 
+			CreatedDate, CreatedByUser, ModifiedDate, ModifiedByUser,
+			TotalView, ImageUrl, Published, Keywords
+			From {databaseOwner}{objectQualifier}SuonLight_News_News
+			Where CatID = @CatID
+			order by ModifiedDate
+		End
+		Else
+		Begin
+			Select ID, CatID, Title, [Description], Content, 
+			CreatedDate, CreatedByUser, ModifiedDate, ModifiedByUser,
+			TotalView, ImageUrl, Published, Keywords
+			From {databaseOwner}{objectQualifier}SuonLight_News_News
+			Where CatID = @CatID AND Published = @Published
+			order by ModifiedDate
+		End
+	End
+END
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}SuonLight_GetNewsObj	
+	@ID int = 0
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+
+    
+	Select ID, CatID, Title, [Description], Content, 
+	CreatedDate, CreatedByUser, ModifiedDate, ModifiedByUser,
+	TotalView, ImageUrl, Published, Keywords
+	From {databaseOwner}{objectQualifier}SuonLight_News_News
+	Where ID = @ID
+END
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}SuonLight_AddNews		
+	@CatID int = 0,
+	@Title nvarchar(250),
+	@Description nvarchar(2000),
+	@Content ntext,
+	@CreatedByUser int,	
+	@ImageUrl nvarchar(250),
+	@Published bit,
+	@Keywords nvarchar(250)
+AS
+BEGIN
+	
+	SET NOCOUNT ON;
+
+    
+	Insert into {databaseOwner}{objectQualifier}SuonLight_News_News
+	(CatID,Title,[Description],Content,CreatedDate,CreatedByUser,
+	ImageUrl,Published,Keywords)	
+	Values
+	(@CatID,@Title,@Description,@Content,GETDATE(),@CreatedByUser,
+	@ImageUrl,@Published,@Keywords)	
+END
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}SuonLight_UpdateNews	
+	@ID int = 0,		
+	@CatID int = 0,
+	@Title nvarchar(250),
+	@Description nvarchar(2000),
+	@Content ntext,
+	@ModifiedByUser int,	
+	@ImageUrl nvarchar(250),
+	@Published bit,	
+	@TotalView int,
+	@Keywords nvarchar(250)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	
+	Update {databaseOwner}{objectQualifier}SuonLight_News_News
+	Set CatID = @CatID,
+		Title = @Title,
+		[Description] = @Description,
+		Content = @Content,
+		ModifiedDate = GETDATE(),
+		ModifiedByUser = @ModifiedByUser,
+		ImageUrl = @ImageUrl,
+		Published = @Published,
+		TotalView = @TotalView,
+		Keywords=@Keywords
+	Where ID = @ID		
+END
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}SuonLight_DeleteNews	
+	@ID int = 0
+AS
+BEGIN
+	SET NOCOUNT ON;
+	
+	delete from {databaseOwner}{objectQualifier}SuonLight_News_News
+	where ID = @ID		
+END
+GO
+
+

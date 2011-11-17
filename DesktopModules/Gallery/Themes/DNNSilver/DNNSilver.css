@@ -1,0 +1,678 @@
+/*****************************************************
+Gallery style sheet - Updated on October 24,2008
+*****************************************************/
+.Gallery_Main
+{		
+}
+table.Gallery_Container, .Gallery_Container
+{		
+}
+table.Gallery_Border, .Gallery_Border
+{	
+}
+
+TD.Gallery_HeaderCapLeft
+{
+	background: url('Images/header_cap_left.gif') repeat-y top right;			
+}
+
+TD.Gallery_HeaderCapRight
+{	
+	background: url('Images/header_cap_right.gif') repeat-y top left;	
+}
+
+TD.Gallery_HeaderImage
+{		
+	background: url('Images/header_bg.gif') repeat-x top;	
+	padding-left:5px; padding-right:0; padding-top: 4px; padding-bottom: 4px;	
+}
+
+TD.Gallery_Header, .Gallery_Header{			
+	font-weight: bold;
+	font-size: 8pt;	
+	color: #404040;
+	font-family: Tahoma;		
+	letter-spacing: 1px;
+	background-color: #D9D9D9;	
+	background: url('Images/header_bg.gif') repeat-x top;	 
+	padding-left:5px; padding-right:0; padding-top: 2px; padding-bottom: 9px;
+}
+
+.Gallery_HeaderText
+{
+	font-weight: bold;
+	font-size: 8pt;
+	color: #ff9900;
+	font-family: Tahoma;	
+	letter-spacing: 0px;
+}
+
+TD.Gallery_AltHeaderCapLeft, .Gallery_AltHeaderCapLeft
+{	
+	background: url('Images/row_cap_left.gif') repeat-y top right;	
+}
+
+TD.Gallery_AltHeaderImage, .Gallery_AltHeaderImage
+{	
+	background: url('Images/alt_header_bg.gif') repeat-x top;		
+	padding-left:5px; padding-right:0; padding-top: 0px; padding-bottom: 1px;
+	font-weight: bold;
+	font-size: 8pt;
+	color: #cc6600;			
+	font-family: Tahoma;
+}
+
+TD.Gallery_AltHeader, .Gallery_AltHeader
+{	
+	font-weight: bold;
+	font-size: 8pt;
+	color: #cc6600;			
+	font-family: Tahoma;
+	letter-spacing: 0px;
+	background: url('Images/alt_header_bg.gif') repeat-x top left;	
+	padding-left:5px; padding-right:0; padding-top: 1px; padding-bottom: 3px;
+}
+
+TD.Gallery_AltHeaderCapRight
+{	
+	background: url('Images/row_cap_right.gif') repeat-y top left;	
+}
+
+.Gallery_AltHeaderText
+{
+	font-weight: bold;
+	font-size: 8pt;	
+	color: #cc6600;
+	font-family: Tahoma;
+	letter-spacing: 0px;
+}
+
+TD .Gallery_RowContent {
+	background-color: #F5F5F5;
+}
+
+TD.Gallery_BodyCapLeft, TD.Gallery_BodyCapRight
+{	
+	background: url('Images/alt_body_cap_right.gif') no-repeat bottom left;		
+	padding-left: 0;	
+}
+
+TD.Gallery_FooterCapLeft
+{	
+	background: url('Images/row_cap_left.gif') repeat-y top right;		
+}
+
+TD.Gallery_FooterCapRight
+{	
+	background: url('Images/row_cap_right.gif') repeat-y top left;	
+}
+
+TD.Gallery_FooterImage
+{	
+	background: url('Images/footer_bg.gif') repeat-x bottom;	
+	border-bottom: #red 4px solid;
+	padding-left:5px; padding-top:3px; padding-bottom:3px;  
+}
+
+TD.Gallery_Footer, .Gallery_Footer 
+{
+	font-weight: bold;
+	font-size: 8pt;	
+	color: #404040;
+	font-family: Tahoma;
+	letter-spacing: 1px; 
+	background: url('Images/footer_bg.gif') repeat-x bottom;	
+	border-bottom: #D0D0D0 1px solid;		
+	padding-left:5px; padding-top: 3px; padding-bottom: 3px;	
+}
+
+TD.Gallery_MFooter, .Gallery_MFooter 
+{
+	font-weight: bold;
+	font-size: 8pt;	
+	color: #404040;
+	font-family: Tahoma;
+	letter-spacing: 1px; 
+	background: url('Images/footer_bg.gif') repeat-x bottom;	
+	border-bottom: #D0D0D0 1px solid;		
+	padding-left:5px; padding-top: 1px; padding-bottom: 1px;	
+	height: 20px;
+	line-height: 20px;
+	border-left: px solid #E0DFE3;
+	border-right: px solid #E0DFE3;
+	border-bottom: px solid #D0D0D0;
+}
+
+.Gallery_FooterText
+{
+	font-weight: bold;
+	font-size: 8pt;
+	color: #a4a5a6;
+	font-family: Tahoma;
+	letter-spacing: 0px;
+}
+
+TD.Gallery_BottomPanelCapLeft
+{	
+	background: url('Images/bottom_panel_cap_left.gif') repeat-y top right;	
+	padding: 0;
+}
+
+TD.Gallery_BottomPanelCapRight
+{	
+	background: url('Images/bottom_panel_cap_right.gif') repeat-y bottom left;	
+	padding: 0;
+}
+
+TD.Gallery_BottomPanel, .Gallery_BottomPanel 
+{
+	padding-left: 0; padding-top: 6px; padding-bottom: 0;
+}
+
+TD.Gallery_BottomCapLeft
+{			
+}
+
+TD.Gallery_Bottom
+{		
+}
+
+TD.Gallery_BottomCapRight
+{			
+}
+
+TD.Gallery_SubHeader, .Gallery_SubHeader
+{
+	background-color: #ececec;
+}
+
+.Gallery_SubHeader
+{
+	font-weight: bold;
+	font-size: 8pt;	
+	color: #4455aa;
+	font-family: Verdana;
+}
+
+TD.Gallery_SubHeaderImage
+{		
+	background-color: White;
+	background: url('Images/_SubHeader_Image.jpg');
+	background-repeat: repeat-y;
+}
+
+TD.Gallery_RowCapLeft
+{	
+	background: url('Images/row_cap_left.gif') repeat-y top right;	
+}
+
+TD.Gallery_RowCapRight
+{
+	width: auto;
+	background: url('Images/row_cap_right.gif') repeat-y top left;	
+}
+
+TD.Gallery_RowBorderLeft
+{	
+	background: url('Images/row_image_left.gif') repeat-y top right;	
+	border-bottom: #999999 1px solid;	
+}
+
+TD.Gallery_RowImage
+{		
+	border-right: #999999 1px solid;
+	border-top: white 1px solid;	
+	border-left: white 1px solid;
+	border-bottom: #999999 1px solid;	
+	background-color: #ececec;	
+	width: 24px;
+	padding-left: 3px;  padding-bottom: 3px;
+}
+
+.Gallery_Row
+{		   
+    font-family: Verdana;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+TD.Gallery_Row
+{
+	font-family: Tahoma;
+   font-size: 10px;
+   font-weight: bold;
+	color: #404040;
+	padding-right: 2px;
+	padding-left: 2px;
+	background-color: #EFEFEF;
+}
+
+TD.Gallery_Body, .Gallery_Body
+{	
+	font-family: Tahoma;
+    font-size: 11px;
+    font-weight: normal;
+	background-color: #f5f5f5;
+	padding-left: 3px; padding-right: 3px; padding-top: 3px; padding-bottom: 3px;
+}
+
+.Gallery_RowHighLight
+{		
+	font-weight: normal;
+	font-size: 11px;	
+	font-family: Verdana;
+	letter-spacing: 0; 	
+}
+
+TD.Gallery_RowHighlight
+{			
+	background-color: #ececec;
+	padding-left: 5px; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;
+}
+
+.Gallery_RowHeader, .Gallery_RowPanel
+{
+	color: #003366;		
+	font-family: Verdana;
+    font-size: 11px;
+    font-weight: normal;	
+}
+
+TD.Gallery_RowHeader /* Screen01 */
+{
+	color: black; 
+	font-family: Tahoma, Arial, Helvetica; 
+	font-size: 9pt; 
+	font-weight: bold; 
+	background-color: #e9e9e9;  
+	border-bottom: #999999 1px solid;
+	border-right: #666666 1px solid;		
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=#eaeaef, EndColorStr=#d0d0d1);	
+}
+
+TD.Gallery_RowPanel, .Gallery_RowPanel
+{	
+	border-right: #999999 1px solid;
+	border-top: white 1px solid;	
+	border-left: white 1px solid;
+	border-bottom: #999999 1px solid;	
+	background-color: #ececec;	
+}
+
+TD.Gallery_ListCell
+{
+	background-color: White;
+	border-style: solid;
+	border-color:#6699cc;
+	border-width:1px 1px 1px;
+	font-family: Verdana;
+    font-size: 12px;
+    font-weight: normal;    
+}
+
+TD.Gallery_AlbumTL
+{
+	background: url('Images/album_top_left.gif') no-repeat bottom right;
+	padding: 0;
+}
+
+TD.Gallery_AlbumTC
+{		
+	background: url('Images/album_top_center.gif') repeat-x bottom left;	
+	padding: 0;
+}
+
+TD.Gallery_AlbumTR
+{
+	background: url('Images/album_top_right.gif') no-repeat  bottom left;	
+	padding: 0;
+}
+
+TD.Gallery_AlbumML
+{
+	background: url('Images/album_middle_left.gif') repeat-y top right;
+	padding: 0;	
+}
+
+TD.Gallery_Album
+{
+	background-color:#E8E8E8;
+	border-top: 1px #f5f5f5 solid;
+	border-left: 1px #f5f5f5 solid;	
+	border-right: 1px #C2D8F9 solid;
+	border-bottom: 1px #C2D8F9 solid;
+}
+
+TD.Gallery_AlbumMR
+{
+	background: url('Images/album_middle_right.gif') repeat-y top left;
+	padding: 0;	
+}
+
+TD.Gallery_AlbumBL
+{
+	background: url('Images/album_bottom_left.gif') no-repeat top right;	
+	padding: 0;
+}
+
+TD.Gallery_AlbumBC
+{
+	background: url('Images/album_bottom_center.gif') repeat-x top;	
+	padding: 0;
+}
+
+TD.Gallery_AlbumBR
+{
+	background: url('Images/album_bottom_right.gif') no-repeat top left;	
+	padding: 0;	
+}
+
+TD.Gallery_FileTL
+{
+	background: url('Images/frame_top_left.gif') no-repeat bottom right;
+	padding: 0;
+}
+
+TD.Gallery_FileTC
+{		
+	background: url('Images/frame_top_center.gif') repeat-x bottom left;	
+	padding: 0;
+}
+
+TD.Gallery_FileTR
+{
+	background: url('Images/frame_top_right.gif') no-repeat  bottom left;	
+	padding: 0;
+}
+
+TD.Gallery_FileML
+{
+	background: url('Images/frame_middle_left.gif') repeat-y top right;
+	padding: 0;	
+}
+
+TD.Gallery_File
+{
+	background-color: #f5f5f5;	
+}
+
+TD.Gallery_FileMR
+{
+	background: url('Images/frame_middle_right.gif') repeat-y top left;
+	padding: 0;	
+}
+
+TD.Gallery_FileBL
+{
+	background: url('Images/frame_bottom_left.gif') no-repeat top right;	
+	padding: 0;
+}
+
+TD.Gallery_FileBC
+{
+	background: url('Images/frame_bottom_center.gif') repeat-x top;	
+	padding: 0;
+}
+
+TD.Gallery_FileBR
+{
+	background: url('Images/frame_bottom_right.gif') no-repeat top left;	
+	padding: 0;	
+}
+
+TD.Gallery_PictureTL
+{
+	background: url('Images/picture_top_left.gif') no-repeat bottom right;
+	padding: 0;
+}
+
+TD.Gallery_PictureTC
+{		
+	background: url('Images/picture_top_center.gif') repeat-x bottom left;	
+	padding: 0;
+}
+
+TD.Gallery_PictureTR
+{
+	background: url('Images/picture_top_right.gif') no-repeat  bottom left;	
+	padding: 0;
+}
+
+TD.Gallery_PictureML
+{
+	background: url('Images/picture_middle_left.gif') repeat-y top right;
+	padding: 0;	
+}
+
+TD.Gallery_Picture
+{
+	background-color: #f5f5f5;	
+}
+
+TD.Gallery_PictureMR
+{
+	background: url('Images/picture_middle_right.gif') repeat-y top left;
+	padding: 0;	
+}
+
+TD.Gallery_PictureBL
+{
+	background: url('Images/picture_bottom_left.gif') no-repeat top right;	
+	padding: 0;
+}
+
+TD.Gallery_PictureBC
+{
+	background: url('Images/picture_bottom_center.gif') repeat-x top;	
+	padding: 0;
+}
+
+TD.Gallery_PictureBR
+{
+	background: url('Images/picture_bottom_right.gif') no-repeat top left;	
+	padding: 0;	
+}
+
+TD.Gallery_Image, .Gallery_Image
+{
+	filter:progid:DXImageTransform.Microsoft.Shadow(color='#006699', Direction=135, Strength=3) ;
+}
+
+.Gallery_NormalGrey
+{
+    font-family: Verdana;
+    font-size: 10px;
+    font-weight: normal;
+    color: #999999;
+}
+
+.GalleryMenu_IconButton {
+	cursor: hand; 
+	height: 22px;
+	width: 22px;
+}
+
+/* .GalleryMenu_MenuContainer {
+	background-color: #e9e9e9; 
+} */
+
+.GalleryMenu_MenuBar {
+	cursor: hand;
+	height: 16px;
+	background-color: Transparent; 
+}
+.GalleryMenu_MenuItem {
+	border-left: #cccccc 0px solid; 
+	border-bottom: #e9e9e9 0px solid; 
+	border-top: #e9e9e9 0px solid; 
+	border-right: #e9e9e9 0px solid;
+	cursor: hand; 
+	color: black; 
+	font-family: Tahoma, Arial, Helvetica; 
+	font-size: 7pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	background-color: Transparent;
+}
+
+.GalleryMenu_MenuItem td span {
+    white-space: nowrap;
+}
+
+.GalleryMenu_MenuIcon {
+	border-left: #e9e9e9 0px solid; 
+	border-bottom: #e9e9e9 0px solid; 
+	border-top: #e9e9e9 0px solid; 
+	cursor: hand; 
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 22px; 
+	height: 22px;
+	padding-right: 4px;
+}
+.GalleryMenu_SubMenu {
+    background-color: #e9e9e9;
+    text-align: left;
+	z-index: 1000; 
+	cursor: hand;
+	padding-right: 4px;
+	margin-left: 5px;
+	border: solid 1px black;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color='#696969', Direction=135, Strength=3); 
+}
+.GalleryMenu_MenuBreak {
+	height: 3px;
+}
+.GalleryMenu_MenuItemSel {
+	background-color: #dfdfdf; 
+	cursor: hand; 
+	color: black; 
+	font-family: Tahoma, Arial, Helvetica; 
+	font-size: 7pt; 
+	font-weight: normal; 
+	font-style: normal;
+	white-space: nowrap;
+}
+
+/* .GalleryMenu_MenuArrow {
+	border-right: #e9e9e9 0px solid; 
+	border-bottom: #e9e9e9 0px solid; 
+	border-top: #e9e9e9 0px solid;
+	font-family: webdings; 
+	font-size: 10pt; 
+	cursor: hand; 
+}
+.GalleryMenu_RootMenuArrow {
+	font-family: webdings; 
+	font-size: 10pt; 
+	cursor: hand;
+} */
+
+/* Gallery Media Menu */
+
+.MediaMenu_Thumbnail {
+	cursor: hand; 
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*.MediaMenu_MenuContainer {
+	background-color: #e9e9e9;  
+	width: 100px;
+}
+.MediaMenu_MenuBar {
+	cursor: hand;
+	height: 16px;
+	background-color: Transparent;
+} */
+
+.MediaMenu_MenuItem {
+	border-left: #e9e9e9 0px solid; 
+	border-bottom: #e9e9e9 0px solid; 
+	border-top: #e9e9e9 0px solid; 
+	border-right: #e9e9e9 0px solid;
+	cursor: hand; 
+	color: black; 
+	font-family: Tahoma, Arial, Helvetica; 
+	font-size: 7pt; 
+	font-weight: normal; 
+	font-style: normal; 
+	background-color: #e9e9e9;
+	white-space: nowrap;
+	text-align: left;
+}
+
+.MediaMenu_MenuItem td span {
+    white-space: nowrap;
+}
+
+.MediaMenu_MenuIcon {
+	background-color: #e9e9e9; 
+	border-left: #e9e9e9 0px solid; 
+	border-bottom: #e9e9e9 0px solid; 
+	border-top: #e9e9e9 0px solid; 
+	cursor: hand; 
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 22px; 
+	height: 22px;
+	padding-right: 4px;
+}
+.MediaMenu_SubMenu {
+	background-color: #e9e9e9;  
+	z-index: 1000; 
+	cursor: hand;
+	border: solid 1px black;
+	padding-right: 4px;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color='#696969', Direction=135, Strength=3); 
+}
+
+/* .MediaMenu_MenuBreak {
+	height: 0px;
+} */
+
+.MediaMenu_MenuItemSel {
+	background-color: #dfdfdf; 
+	cursor: hand; 
+	color: black; 
+	font-family: Tahoma, Arial, Helvetica; 
+	font-size: 7pt; 
+	font-weight: normal; 
+	font-style: normal;
+	white-space: nowrap;
+}
+
+/* .MediaMenu_MenuArrow {
+	border-right: #e9e9e9 0px solid; 
+	border-bottom: #e9e9e9 0px solid; 
+	border-top: #e9e9e9 0px solid;
+	font-family: webdings; 
+	font-size: 10pt; 
+	cursor: hand; 
+}
+.MediaMenu_RootMenuArrow {
+	font-family: webdings; 
+	font-size: 10pt; 
+	cursor: hand;
+} */
+
+HR {
+	height: 1px;
+	color: #D0D0D0;
+}
+
+.Gallery_BackButton {
+    width: 80px;
+    height: 30px;
+    margin-top: 3px;
+    border: none;
+    color: White;
+    font-size: 8pt;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-top: 4px;
+    background: url('images/m_Back.gif') no-repeat center center;
+}

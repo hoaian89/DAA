@@ -1,0 +1,23 @@
+
+.inlineStyle 
+{ 
+	BORDER-RIGHT: darkgray 1px solid; 
+	BORDER-TOP: darkgray 1px solid; 
+	BORDER-LEFT: darkgray 1px solid; 
+	BORDER-BOTTOM: darkgray 1px solid; 
+}
+
+.WikiLinksPanel
+{
+	width:150px;
+}
+
+#DnnWiki pre {
+	background-color:#FAFAFA;
+	border:1px solid #DADADA;
+	margin:1em 1em 1em 1.6em;
+	white-space:pre-wrap;
+	overflow-x:auto;
+	padding:2px;
+	width:95%;	
+}

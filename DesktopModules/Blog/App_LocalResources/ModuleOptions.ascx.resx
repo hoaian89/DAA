@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="lblSearchBlogComment.Text">
+		<value>Include Blog Comment</value>
+	</data>
+	<data name="Listitem2.Text">
+		<value>Single Blog</value>
+	</data>
+	<data name="lblRecentRssEntriesMax.Help">
+		<value>You can limit the number of RSS entries for Most recent entries.</value>
+	</data>
+	<data name="secGeneralSettings.Text">
+		<value>Basic Settings</value>
+	</data>
+	<data name="lblUploadOption.Text">
+		<value>Allow Upload Options:</value>
+	</data>
+	<data name="lblRecentEntriesMax.Help">
+		<value>You can limit the number of entries for Most recent entries.</value>
+	</data>
+	<data name="lblRecentRssEntriesMax.Text">
+		<value>Limit Recent RSS entries to:</value>
+	</data>
+	<data name="lblSearchSummary.Text">
+		<value>Limit Search Summary To:</value>
+	</data>
+	<data name="lblRecentEntriesMax.Text">
+		<value>Limit recent entries to:</value>
+	</data>
+	<data name="lblSummary.Help">
+		<value>Enter the desired cutoff in characters for the auto-generated summary of blog entries.  To set no limit, enter a value of 0.  Use the avanced option labeled Enforce Summary Truncation to also truncate entries with summaries.  The default is to only truncate auto-generated summaries.</value>
+	</data>
+	<data name="Listitem1.Text">
+		<value>Multiple Bloggers</value>
+	</data>
+	<data name="lblSummary.Text">
+		<value>Limit Auto-Generated Entry Summary To:</value>
+	</data>
+	<data name="lblPortalSearchOption.Help">
+		<value>For use the global Portal Search Options for Blog Content you can control it with the options below</value>
+	</data>
+	<data name="lblMandatory.Text">
+		<value>Make Entry Summary Mandatory:</value>
+	</data>
+	<data name="lblUploadOption.Help">
+		<value>If you enable this option you give users the permission to upload images and attachments to their blog entry.</value>
+	</data>
+	<data name="lblMandatory.Help">
+		<value>When entering a blog entry, this setting forces the user to enter a summary of their blog entry.</value>
+	</data>
+	<data name="lblSearchSummary.Help">
+		<value>It is strongly suggested that during search operations you limit the length of the entry returned so that results can be scanned quickly.</value>
+	</data>
+	<data name="lblShowSummary.Text">
+		<value>Include Summary in Entry:</value>
+	</data>
+	<data name="lblShowSummary.Help">
+		<value>If this option is enabled, the summary (if available) will be shown on the top of the single entry view.</value>
+	</data>
+	<data name="lblPortalSearchOption.Text">
+		<value>Portal Search Options</value>
+	</data>
+	<data name="lblSearchBlogContent.Text">
+		<value>Include Blog Content</value>
+	</data>
+	<data name="secAdvancedSeetings.Text">
+		<value>Advanced Settings</value>
+	</data>
+	<data name="ModuleHelp.Text">
+		<value>&lt;h1&gt;Blog Module Options&lt;/h1&gt;
+&lt;p&gt;...&lt;/p&gt;
+        </value>
+	</data>
+	<data name="cmdGenerateLinks.Text">
+		<value>Regenerate all Permalinks for this Module</value>
+	</data>
+	<data name="ControlTitle_module_options.Text">
+		<value>Blog Module Options</value>
+	</data>
+	<data name="lblPageBlogs.Text">
+		<value>Personal Blog Page</value>
+	</data>
+	<data name="lblPageBlogs.Help">
+		<value>Select the blog which should be used on this tab. For a general Blog page please don't select a specific Blog</value>
+	</data>
+	<data name="lblEnableDNNSearch.Text">
+		<value>Enable DNN Search</value>
+	</data>
+	<data name="lblEnableDNNSearch.Help">
+		<value>If you enabled this option the content of that module will be indexed by the DNN search, please take care of that you only enbable this option for one module (your main blog page), if you enable this option for more then one module you will get duplicated search results</value>
+	</data>
+	<data name="lblShowUniqueTitle.Text">
+		<value>Show unique title</value>
+	</data>
+	<data name="lblShowUniqueTitle.Help">
+		<value>If you enable this option a blog specific title will be displayed in the title bar of the browser</value>
+	</data>
+	<data name="lblMaxImageWidth.Text">
+		<value>Limit Upload Image Width To:</value>
+	</data>
+	<data name="lblMaxImageWidth.Help">
+		<value>You can limit the image width to a maximum with this option</value>
+	</data>
+	<data name="secBookmarks.Text">
+		<value>Social Bookmarks &amp; Netowrks</value>
+	</data>
+	<data name="lblBookmarksInfo.Text">
+		<value>Select which Social Bookmark and Network sites you wish to enable for your blogs.</value>
+	</data>
+	<data name="lblBookmarksInfo.Help">
+		<value>Select which Social Bookmark and Network sites you wish to enable for your blogs.&lt;br&gt;We have taken the liberty to select the most common and most popular networks.</value>
+	</data>
+	<data name="secCommentSettings.Text">
+		<value>Comment Settings</value>
+	</data>
+	<data name="lblShowGravatars.Text">
+		<value>Show Avatars:</value>
+	</data>
+	<data name="lblShowGravatars.Help">
+		<value>Check to show Gravatar images next to comments.</value>
+	</data>
+	<data name="lblGravatarImageWidth.Text">
+		<value>Image Width:</value>
+	</data>
+	<data name="lblGravatarImageWidth.Help">
+		<value>Enter the width of the Gravatar image.  The default width (48) matches the default style of the comments</value>
+	</data>
+	<data name="lblGravatarRating.Text">
+		<value>Image Rating:</value>
+	</data>
+	<data name="lblGravatarRating.Help">
+		<value>Gravatar images are rated based on the content.  G rated images are appropriate for all audiences while PG, R and X rated images may contain inappropriate for some audiences.</value>
+	</data>
+	<data name="lblGravatarDefaultImageUrl.Text">
+		<value>Default Image URL:</value>
+	</data>
+	<data name="lblGravatarDefaultImageUrl.Help">
+		<value>These images will be used for comments left by users without a Gravatar.&lt;br/&gt;
+About Identicon, Wavicon, and MonsterID: Gravatar will be displayed for users who have one, otherwise, a unique identifying image will be created for them based on the IP address of their computer, or on their email address if provided.&lt;br/&gt;
+About custom images: provide the complete URL to the image (including "http://")</value>
+	</data>
+	<data name="lblShowSeoFriendlyUrl.Text">
+		<value>Show SEO Friendly URL</value>
+	</data>
+	<data name="lblShowSeoFriendlyUrl.Help">
+		<value>If you enable this option, then the URL will be modified to replace default.aspx with the title of the blog entry as follows:  .../Blog-Entry-Title.aspx.  This URL format can help with search engine optimization.  The default is set to true.</value>
+	</data>
+	<data name="lblEnableBookmarks.Text">
+		<value>Enable Social Bookmarks</value>
+	</data>
+	<data name="lblEnableBookmarks.Help">
+		<value>If you enable this option, a social bookmarks toolbar will be added to your blog entry page.</value>
+	</data>
+	<data name="lblShowWebsite.Text">
+		<value>Show Website:</value>
+	</data>
+	<data name="lblShowWebsite.Help">
+		<value>Check to allow website to be included with comment.</value>
+	</data>
+	<data name="lblGravatarDefaultImageCustomURL.Help">
+		<value>URL to custom avatar image (including "http://").  Used only if "Custom" is selected above.</value>
+	</data>
+	<data name="lblGravatarDefaultImageCustomURL.Text">
+		<value>Custom Image URL:</value>
+	</data>
+	<data name="lblShowTitle.Help">
+		<value>Check to allow users to create unique titles for entry comments</value>
+	</data>
+	<data name="lblShowTitle.Text">
+		<value>Show Title:</value>
+	</data>
+	<data name="liCustom.Text">
+		<value>Custom</value>
+	</data>
+	<data name="liGrayMan.Text">
+		<value>Gray Man</value>
+	</data>
+	<data name="liIdenticon.Text">
+		<value>Identicon</value>
+	</data>
+	<data name="liMonsterID.Text">
+		<value>MonsterID</value>
+	</data>
+	<data name="liShowGravatars1.Text">
+		<value>Show Avatars</value>
+	</data>
+	<data name="liShowGravatars2.Text">
+		<value>Don't Show Avatars</value>
+	</data>
+	<data name="liWavatar.Text">
+		<value>Wavatar</value>
+	</data>
+	<data name="lblRegenerateLinks.Help">
+		<value>Regenerate the permalink saved for the entries shown in this module.  This is useful mainly for regenerating the permalinks after a change has been made to the URL format for a site.</value>
+	</data>
+	<data name="tblAdvancedSettings.Text">
+		<value>Advanced Settings</value>
+	</data>
+	<data name="tblSEOSettings.Text">
+		<value>SEO Settings</value>
+	</data>
+	<data name="lblRegenerateLinks.Text">
+		<value>Manage Entry Links</value>
+	</data>
+	<data name="lblAllowCommentAnchors.Text">
+		<value>Allow Hyperlinks in Comments</value>
+	</data>
+	<data name="lblAllowCommentAnchors.Help">
+		<value>Check to allow hyperlinks to be entered in comments.</value>
+	</data>
+	<data name="lblAllowCommentImages.Text">
+		<value>Allow Images in Comments</value>
+	</data>
+	<data name="lblAllowCommentImages.Help">
+		<value>Check to allow images to be included in comments.</value>
+	</data>
+	<data name="lblAllowCommentFormatting.Text">
+		<value>Allow Basic Formatting in Comments</value>
+	</data>
+	<data name="lblAllowCommentFormatting.Help">
+		<value>Check to allow basic formatting in comments (b or strong, i or em, u and blockquote)</value>
+	</data>
+	<data name="lblEnforceSummaryTruncation.Text">
+		<value>Enforce Entry Summary Limit</value>
+	</data>
+	<data name="lblEnforceSummaryTruncation.Help">
+		<value>Checking this option will cause both auto-generated and actual entry summaries to be truncated based on the value entered in the 'Limit Entry Summary To' setting above.</value>
+	</data>
+	<data name="rblGravatarRating_g.Text">
+		<value>G - Suitable for all audiences</value>
+	</data>
+	<data name="rblGravatarRating_pg.Text">
+		<value>PG - Possibly offensive, typically suitable for audiences 13 and above</value>
+	</data>
+	<data name="rblGravatarRating_r.Text">
+		<value>R - Intended for audiences 17 and above</value>
+	</data>
+	<data name="rblGravatarRating_x.Text">
+		<value>X - Even more mature than R</value>
+	</data>
+</root>

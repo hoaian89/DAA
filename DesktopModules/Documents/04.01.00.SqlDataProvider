@@ -1,0 +1,46 @@
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}{objectQualifier}UpdateDocument') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}UpdateDocument
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UpdateDocument
+
+@ModuleId		  INT,
+@ItemId           INT,
+@Title            nvarchar(150),
+@URL              nvarchar(250),
+@UserId           INT,
+@Category         nvarchar(50),
+@OwnedByUserID    INT,
+@SortOrderIndex   INT, 
+@Description      nvarchar(255)
+AS
+UPDATE {databaseOwner}{objectQualifier}Documents
+SET    Title             = @Title,
+       URL               = @URL,
+       Category          = @Category,
+       OwnedByUserID     = @OwnedByUserID,
+       ModifiedByUserID  = @UserId,
+       ModifiedDate      = getdate(),
+       SortOrderIndex    = @SortOrderIndex,
+       Description       = @Description
+WHERE  ItemId = @ItemId
+	AND ModuleId = @ModuleId
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}DeleteDocument]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}DeleteDocument
+GO
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}DeleteDocument
+	@ModuleId INT, 
+	@ItemId int
+AS
+
+DELETE FROM {objectQualifier}Documents
+WHERE  ItemId = @ItemId
+	AND ModuleId = @ModuleId
+
+GO
+
+

@@ -1,0 +1,45 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Drop Links Table **/
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Links] DROP CONSTRAINT [FK_{objectQualifier}Links_{objectQualifier}Modules]
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Links] DROP CONSTRAINT [PK_{objectQualifier}Links]
+GO
+
+DROP INDEX {databaseOwner}[{objectQualifier}Links].[IX_{objectQualifier}Links]
+GO
+
+DROP TABLE {databaseOwner}[{objectQualifier}Links]
+GO
+
+
+/** Drop Stored Procedures **/
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}dnnLinks_GetLink]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}dnnLinks_GetLinks]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}dnnLinks_UpdateLink]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}dnnLinks_DeleteLink]
+GO
+
+DROP PROCEDURE {databaseOwner}[{objectQualifier}dnnLinks_AddLink]
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

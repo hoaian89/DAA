@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="ControlTitle_edit.Text">
+		<value>Edit IFrame</value>
+	</data>
+	<data name="ModuleHelp.Text">
+		<value><![CDATA[
+			<h1>Edit IFrame</h1>
+			<p>
+				The <b>iframe</b> element creates an inline frame that contains another document. 
+				This screen provides access to edit <b>iframe</b> settings. These settings include 
+				the source URL of the document; querystring parameter to dynamically pull the 
+				source URL from; name of the <b>iframe</b> (for use with scripts and/or as a target 
+				for links); display size (height and width); tool tip to be displayed when the user 
+				hovers over the <b>iframe</b>; whether scrolling will be used, not used, or 
+				determined automatically; and, whether a border will or will not be displayed. 
+				Click <b>Save</b> to save settings.
+			</p>
+		]]></value>
+	</data>
+	<data name="dshOptions.Text">
+		<value>Options</value>
+	</data>
+	<data name="plSource.Text">
+		<value>Source</value>
+	</data>
+	<data name="plSource.Help">
+		<value>The URL of the document to show in the iframe</value>
+	</data>
+	<data name="plUrlParameter.Text">
+		<value>URL Parameter</value>
+	</data>
+	<data name="plUrlParameter.Help">
+		<value>The querystring parameter used to dynamically set the iframe source</value>
+	</data>
+	<data name="plName.Text">
+		<value>Name</value>
+	</data>
+	<data name="plName.Help">
+		<value>Specifies a unique name of the iframe (to use in scripts or as targets for links/iframes)</value>
+	</data>
+	<data name="plWidth.Text">
+		<value>Width</value>
+	</data>
+	<data name="plWidth.Help">
+		<value>Defines the width of the iframe</value>
+	</data>
+	<data name="plHeight.Text">
+		<value>Height</value>
+	</data>
+	<data name="plHeight.Help">
+		<value>Defines the height of the iframe</value>
+	</data>
+  <data name ="plAutoHeight.Text">
+    <value>Auto height</value>
+  </data>
+  <data name="plAutoHeight.Help">
+    <value>Auto stretch the height according to the content of the frame. Works only if the document inside the iframe belongs to the same domain.</value> 
+  </data>
+  <data name ="dshLegacy.Text">
+    <value>Other Options</value>
+  </data>
+	<data name="plOnLoad.Text">
+		<value>onload (Javascript)</value>
+	</data>
+	<data name="plOnLoad.Help">
+		<value>Javascript to execute onload, often used for resizing. Only setable for Administrator.</value>
+	</data>
+	<data name="plCssStyle.Text">
+		<value>Css Style</value>
+	</data>
+	<data name="plCssStyle.Help">
+		<value>For example:&lt;br\&gt;height:expression(contentWindow.document.body.scrollHeight+50);</value>
+	</data>
+	<data name="plToolTip.Text">
+		<value>Tool tip</value>
+	</data>
+	<data name="plToolTip.Help">
+		<value>A text to display in a tool tip when the user hovers the mouse over the iframe</value>
+	</data>
+	<data name="plScrolling.Text">
+		<value>Scrolling</value>
+	</data>
+	<data name="plScrolling.Help">
+		<value>Define scroll bar style - displayed (yes), not displayed (no), or automatic (auto)</value>
+	</data>
+	<data name="plBorder.Text">
+		<value>Border</value>
+	</data>
+	<data name="plBorder.Help">
+		<value>Specifies whether or not to display a frame border</value>
+	</data>
+	<data name="valWidth.Text">
+		<value>&lt;br /&gt;Width must be a number greater than zero</value>
+	</data>
+	<data name="valHeight.Text">
+		<value>&lt;br /&gt;Height must be a number greater than zero</value>
+	</data>
+	<data name="valURL.ErrorMessage">
+		<value>&lt;br /&gt;You Must Enter a Valid URL</value>
+	</data>
+	<data name="dshParams.Text">
+		<value>QueryString Parameters</value>
+	</data>
+	<data name="Name.Header">
+		<value>Name</value>
+	</data>
+	<data name="Value.Header">
+		<value>Value</value>
+	</data>
+	<data name="Type.Header">
+		<value>Type</value>
+	</data>
+	<data name="Argument.Header">
+		<value>Argument</value>
+	</data>
+	<data name="ParameterInvalid.Header">
+		<value>Invalid Parameter</value>
+	</data>
+	<data name="ParameterInvalid.Text">
+		<value>The specified parameter options are invalid. Ensure the &lt;b&gt;Name&lt;/b&gt; and, if required, type argument are both specified.</value>
+	</data>
+	<data name="DeleteParamConfirmation.Text">
+		<value>Are you sure you want to remove this item from the data store? Once removed it cannot be retrieved.</value>
+	</data>
+	<data name="cmdAddParam.Text">
+		<value>Add QueryString Parameter</value>
+	</data>
+	<data name="StaticValue.Text">
+		<value>Static Value</value>
+	</data>
+	<data name="PassThrough.Text">
+		<value>Pass-Through QueryString</value>
+	</data>
+	<data name="FormPassThrough.Text">
+		<value>Pass-Through Form Post</value>
+	</data>
+	<data name="UserCustomProperty.Text">
+		<value>Custom User Property</value>
+	</data>
+	<data name="PortalID.Text">
+		<value>Portal ID</value>
+	</data>
+	<data name="PortalName.Text">
+		<value>Portal Name</value>
+	</data>
+	<data name="TabID.Text">
+		<value>Tab ID</value>
+	</data>
+  <data name="ModuleID.Text">
+    <value>Module ID</value>
+  </data>
+  <data name="UserID.Text">
+		<value>User ID</value>
+	</data>
+  <data name="Locale.Text">
+    <value>Current Locale</value>
+  </data>
+  <data name="UserUsername.Text">
+		<value>User's Username</value>
+	</data>
+	<data name="UserFirstName.Text">
+		<value>User's First Name</value>
+	</data>
+	<data name="UserLastName.Text">
+		<value>User's Last Name</value>
+	</data>
+	<data name="UserDisplayName.Text">
+		<value>User's Display Name</value>
+	</data>
+	<data name="UserEmail.Text">
+		<value>User's Email</value>
+	</data>
+	<data name="UserWebsite.Text">
+		<value>User's Website</value>
+	</data>
+	<data name="UserIM.Text">
+		<value>User's IM</value>
+	</data>
+	<data name="UserStreet.Text">
+		<value>User's Street</value>
+	</data>
+	<data name="UserUnit.Text">
+		<value>User's Unit</value>
+	</data>
+	<data name="UserCity.Text">
+		<value>User's City</value>
+	</data>
+	<data name="UserCountry.Text">
+		<value>User's Country</value>
+	</data>
+	<data name="UserRegion.Text">
+		<value>User's Region</value>
+	</data>
+	<data name="UserPostalCode.Text">
+		<value>User's Postal Code</value>
+	</data>
+	<data name="UserPhone.Text">
+		<value>User's Phone</value>
+	</data>
+	<data name="UserCell.Text">
+		<value>User's Cell</value>
+	</data>
+	<data name="UserFax.Text">
+		<value>User's Fax</value>
+	</data>
+	<data name="UserLocale.Text">
+		<value>User's Locale</value>
+	</data>
+	<data name="UserTimeZone.Text">
+		<value>User's TimeZone</value>
+	</data>
+	<data name="UserIsAuthorized.Text">
+		<value>User's Authorized Flag</value>
+	</data>
+	<data name="UserIsLockedOut.Text">
+		<value>User's Lock Out Flag</value>
+	</data>
+	<data name="UserIsSuperUser.Text">
+		<value>User's SuperUser Flag</value>
+	</data>
+	<data name="Auto.Text">
+		<value>Auto</value>
+	</data>
+	<data name="Cancel.Text">
+		<value>Cancel</value>
+	</data>
+	<data name="Delete.Text">
+		<value>Delete</value>
+	</data>
+	<data name="Edit.Text">
+		<value>Edit</value>
+	</data>
+	<data name="No.Text">
+		<value>No</value>
+	</data>
+	<data name="Save.Text">
+		<value>Save</value>
+	</data>
+	<data name="Yes.Text">
+		<value>Yes</value>
+	</data>
+	<data name="plAllowTransparency.Text">
+		<value>Allow Transparency</value>
+	</data>
+	<data name="plAllowTransparency.Help">
+		<value>Sets the attribute allowtransparancy=true to the iframe. The inner doc need also a corresponding css setting. IE only, setting it to true will break XHTML compliance.</value>
+	</data>
+</root>

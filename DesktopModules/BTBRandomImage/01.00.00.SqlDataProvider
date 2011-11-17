@@ -1,0 +1,161 @@
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              BTBRandomImage               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}BTBRandomImageAdd]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}BTBRandomImageAdd]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}BTBRandomImageDelete]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}BTBRandomImageDelete]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}BTBRandomImageGet]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}BTBRandomImageGet]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}BTBRandomImageGetByModules]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}BTBRandomImageGetByModules]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}BTBRandomImageList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}BTBRandomImageList]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}BTBRandomImageUpdate]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}BTBRandomImageUpdate]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}BTBRandomImage]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}BTBRandomImage]
+GO
+
+CREATE TABLE {databaseOwner}[{objectQualifier}BTBRandomImage] (
+	[imageID] [int] IDENTITY (1, 1) NOT NULL ,
+	[moduleID] [int] NOT NULL ,
+	[imageSrc] [varchar] (1000) COLLATE Latin1_General_CI_AS NOT NULL ,
+	[imageAlt] [varchar] (500) COLLATE Latin1_General_CI_AS NULL 
+) ON [PRIMARY]
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}BTBRandomImage] WITH NOCHECK ADD 
+	CONSTRAINT [PK_{objectQualifier}BTBRandomImage] PRIMARY KEY  CLUSTERED 
+	(
+		[imageID]
+	)  ON [PRIMARY] 
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}BTBRandomImage] ADD 
+	CONSTRAINT [FK_{objectQualifier}BTBRandomImage_Modules] FOREIGN KEY 
+	(
+		[moduleID]
+	) REFERENCES {databaseOwner}[{objectQualifier}Modules] (
+		[ModuleID]
+	) ON DELETE CASCADE  NOT FOR REPLICATION 
+GO
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}BTBRandomImageAdd
+	@moduleID int,
+	@imageSrc varchar(1000),
+	@imageAlt varchar(500)
+AS
+
+INSERT INTO {objectQualifier}BTBRandomImage (
+	[moduleID],
+	[imageSrc],
+	[imageAlt]
+) VALUES (
+	@moduleID,
+	@imageSrc,
+	@imageAlt
+)
+
+select SCOPE_IDENTITY()
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}BTBRandomImageDelete
+	@imageID int
+AS
+
+DELETE FROM {objectQualifier}BTBRandomImage
+WHERE
+	[imageID] = @imageID
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}BTBRandomImageGet
+	@imageID int
+	,@moduleId int 
+AS
+
+SELECT
+	[imageID],
+	[moduleID],
+	[imageSrc],
+	[imageAlt]
+FROM {objectQualifier}BTBRandomImage
+WHERE
+	[imageID] = @imageID
+	AND [moduleid]=@moduleId 
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}BTBRandomImageGetByModules
+	@moduleID int
+AS
+
+SELECT
+	[imageID],
+	[moduleID],
+	[imageSrc],
+	[imageAlt]
+FROM {objectQualifier}BTBRandomImage
+WHERE
+	[moduleID]=@moduleID
+
+GO
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}BTBRandomImageList
+AS
+
+SELECT
+	[imageID],
+	[moduleID],
+	[imageSrc],
+	[imageAlt]
+FROM {objectQualifier}BTBRandomImage
+
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}BTBRandomImageUpdate
+	@imageID int, 
+	@moduleID int, 
+	@imageSrc varchar(1000), 
+	@imageAlt varchar(500) 
+AS
+
+UPDATE {objectQualifier}BTBRandomImage SET
+	[moduleID] = @moduleID,
+	[imageSrc] = @imageSrc,
+	[imageAlt] = @imageAlt
+WHERE
+	[imageID] = @imageID
+
+GO

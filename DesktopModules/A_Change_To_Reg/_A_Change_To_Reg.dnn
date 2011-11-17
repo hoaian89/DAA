@@ -1,0 +1,53 @@
+﻿<dotnetnuke type="Package" version="5.0">
+  <packages><package name="A_Change_To_Reg" type="Module" version="1.0.0">
+  <friendlyName>A_Change_To_Reg</friendlyName>
+  <description />
+  <owner>
+    <name />
+    <organization />
+    <url />
+    <email />
+  </owner>
+  <license>The license for this package is not currently included within the installation file, please check with the vendor for full license details.</license>
+  <releaseNotes />
+  <components>
+    <component type="Module">
+      <desktopModule>
+        <moduleName>A_Change_To_Reg</moduleName>
+        <foldername>A_Change_To_Reg</foldername>
+        <businessControllerClass />
+        <supportedFeatures />
+        <moduleDefinitions>
+          <moduleDefinition>
+            <friendlyName>A_Change_To_Reg</friendlyName>
+            <defaultCacheTime>0</defaultCacheTime>
+            <moduleControls>
+              <moduleControl>
+                <controlKey />
+                <controlSrc>DesktopModules/A_Change_To_Reg/A_Change_Sug_To_Reg.ascx</controlSrc>
+                <supportsPartialRendering>False</supportsPartialRendering>
+                <controlTitle />
+                <controlType>View</controlType>
+                <iconFile />
+                <helpUrl />
+                <viewOrder>0</viewOrder>
+              </moduleControl>
+            </moduleControls>
+          </moduleDefinition>
+        </moduleDefinitions>
+      </desktopModule>
+    </component>
+    <component type="File">
+      <files>
+        <basePath>DesktopModules\A_Change_To_Reg</basePath>
+        <file>
+          <name>A_Change_Sug_To_Reg.ascx</name>
+        </file>
+        <file>
+          <name>A_Change_Sug_To_Reg.ascx.cs</name>
+        </file>
+      </files>
+    </component>
+  </components>
+</package></packages>
+</dotnetnuke>

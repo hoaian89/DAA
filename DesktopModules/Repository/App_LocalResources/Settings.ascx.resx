@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="ControlTitle_settings.Text">
+		<value>Repository Settings</value>
+	</data>
+	<data name="plDescription.Text">
+		<value>Repository Description</value>
+	</data>
+	<data name="plDescription.Help">
+		<value>Enter a description for your repository. This text will appear at the top of the repository on your page</value>
+	</data>
+	<data name="plCategory.Text">
+		<value>Categories</value>
+	</data>
+	<data name="plCategory.Help">
+		<value>Enter the Categories for this repository. To add a new Category, enter the name of the category and click on the Add Category link. To edit a Category, select it and click on the pencil icon. Use the X and arrow icons to delete and change the order of your categories.</value>
+	</data>
+	<data name="plPageSize.Text">
+		<value>Enter the number of Items Per Page</value>
+	</data>
+	<data name="plRSSFeed.Text">
+		<value>Enable RSS Feed</value>
+	</data>
+	<data name="plSecurityRoles.Text">
+		<value>Security Roles</value>
+	</data>
+	<data name="plSkin.Text">
+		<value>Repository Skin</value>
+	</data>
+	<data name="plRatingImage.Text">
+		<value>Image set to use for Ratings</value>
+	</data>
+	<data name="plFolders.Text">
+		<value>Specify the folders to store the Repository files</value>
+	</data>
+	<data name="plNoImage.Text">
+		<value>No Image</value>
+	</data>
+	<data name="plPageSize.Help">
+		<value>Enter the number of files that will display on a page. The default value is 5
+</value>
+	</data>
+	<data name="plRSSFeed.Help">
+		<value>Check this option if you would like to make an RSS feed of the files in your repository available to other web sites. You can turn this on or off at any time</value>
+	</data>
+	<data name="plSecurityRoles.Help">
+		<value>Check the security roles that you would like to assign to each repository function</value>
+	</data>
+	<data name="plSkin.Help">
+		<value>Select the skin to use for your repository
+</value>
+	</data>
+	<data name="plRatingImage.Help">
+		<value>Select the image set to use for the Ratings feature of the repository</value>
+	</data>
+	<data name="plNoImage.Help">
+		<value>If there is no image uploaded for an item, select the image to use</value>
+	</data>
+	<data name="plApprovedFolder.Text">
+		<value>Folder for Approved Files</value>
+	</data>
+	<data name="plUnapprovedFolder.Text">
+		<value>Folder for Unapproved Files</value>
+	</data>
+	<data name="plAnonymousFolder.Text">
+		<value>Folder for Anonymous Files</value>
+	</data>
+	<data name="plApprovedFolder.Help">
+		<value>Enter the full path to the location where the Repository folder will be located. For example: C:\Inetpub\WWWRoot\DNN20\Portals\0\Repository</value>
+	</data>
+	<data name="plUnapprovedFolder.Help">
+		<value>Enter the full path to the location where the Pending folder will be located. For example: C:\Inetpub\WWWRoot\DNN20\Portals\0\Repository\Pending</value>
+	</data>
+	<data name="plAnonymousFolder.Help">
+		<value>Enter the full path to the location where files uploaded by Anonymous Users will be located. For example: C:\Inetpub\WWWRoot\DNN20\Portals\0\Repository\Anonymous</value>
+	</data>
+	<data name="plUploadFields.Text">
+		<value>Upload fields</value>
+	</data>
+	<data name="plUploadFields.Help">
+		<value>Select whether this repository allows uploading Files only, Images only, or Files with Images</value>
+	</data>
+	<data name="plUserFolders.Text">
+		<value>Do you wish to store each user's files in their own folder?</value>
+	</data>
+	<data name="plUserFolders.Help">
+		<value>If checked, each user's uploaded will be stored in their own folder with the Approved Files folder. If NOT checked, then all user uploads will be stored directly in the Approved Files folder.</value>
+	</data>
+	<data name="plDefaultSort.Text">
+		<value>Default Sort</value>
+	</data>
+	<data name="plDefaultSort.Help">
+		<value>Select the default sort order</value>
+	</data>
+	<data name="plViewComments.Text">
+		<value>View User Comments</value>
+	</data>
+	<data name="plViewComments.Help">
+		<value>Select whether only users who can post comments can see them, or can everyone see comments</value>
+	</data>
+	<data name="plViewRatings.Text">
+		<value>View User Ratings</value>
+	</data>
+	<data name="plViewRatings.Help">
+		<value>Select whether only users who can post ratings can see them, or can everyone see ratings</value>
+	</data>
+	<data name="plAttribute.Text">
+		<value>Attributes</value>
+	</data>
+	<data name="plAttribute.Help">
+		<value>Setup any custom attributes for this Repository  module.</value>
+	</data>
+	<data name="plValues.Text">
+		<value>Attribute Values</value>
+	</data>
+	<data name="plValues.Help">
+		<value>Setup the possible values for the currently selected custom attribute.</value>
+	</data>
+	<data name="DeleteCategory.Text">
+		<value>Are you sure you want to delete this Category?</value>
+	</data>
+	<data name="DeleteAttribute.Text">
+		<value>Are you sure you want to delete this Attribute?</value>
+	</data>
+	<data name="DeleteValue.Text">
+		<value>Are you sure you want to delete this Value?</value>
+	</data>
+	<data name="AddCategory.Text">
+		<value>ADD CATEGORY</value>
+	</data>
+	<data name="CancelCategory.Text">
+		<value>CANCEL</value>
+	</data>
+	<data name="AddAttribute.Text">
+		<value>ADD ATTRIBUTE</value>
+	</data>
+	<data name="CancelAttribute.Text">
+		<value>CANCEL</value>
+	</data>
+	<data name="AddValue.Text">
+		<value>ADD VALUE</value>
+	</data>
+	<data name="CancelValue.Text">
+		<value>CANCEL</value>
+	</data>
+	<data name="SortByDate.Text">
+		<value>Date</value>
+	</data>
+	<data name="SortByDownloads.Text">
+		<value>Downloads</value>
+	</data>
+	<data name="SortByUserRating.Text">
+		<value>User Rating</value>
+	</data>
+	<data name="SortByTitle.Text">
+		<value>Title</value>
+	</data>
+	<data name="SortByAuthor.Text">
+		<value>Author Name</value>
+	</data>
+	<data name="UploadFiles.Text">
+		<value>File</value>
+	</data>
+	<data name="UploadLinks.Text">
+		<value>Link (URL)</value>
+	</data>
+	<data name="UploadImageFiles.Text">
+		<value>Image File</value>
+	</data>
+	<data name="UploadImageLinks.Text">
+		<value>Image Link (URL)</value>
+	</data>
+	<data name="ViewCommentsAuth.Text">
+		<value>Authorized Users Only</value>
+	</data>
+	<data name="ViewCommentsAll.Text">
+		<value>All Users</value>
+	</data>
+	<data name="ViewRatingsAuth.Text">
+		<value>Authorized Users Only</value>
+	</data>
+	<data name="ViewRatingsAll.Text">
+		<value>All Users</value>
+	</data>
+	<data name="UserFolders.Text">
+		<value>Store uploaded files in User folders</value>
+	</data>
+	<data name="ModerationRoles.Text">
+		<value>Moderation Roles</value>
+	</data>
+	<data name="DownloadRoles.Text">
+		<value>Download Roles</value>
+	</data>
+	<data name="UploadRoles.Text">
+		<value>Upload Roles</value>
+	</data>
+	<data name="CommentRoles.Text">
+		<value>Comment Roles</value>
+	</data>
+	<data name="RatingRoles.Text">
+		<value>Rating Roles</value>
+	</data>
+	<data name="SaveButton.Text">
+		<value>SAVE</value>
+	</data>
+	<data name="ALL.Text">
+		<value>ALL</value>
+	</data>
+	<data name="plRoot.Text">
+		<value>&lt;root&gt;</value>
+	</data>
+	<data name="AllUsers.Text">
+		<value>All Users</value>
+	</data>
+	<data name="hasItemsCannotDelete.Text">
+		<value>You cannot delete a Category that has Items assigned to it.</value>
+	</data>
+	<data name="SortByCreationDate.Text">
+		<value>Uploaded Date</value>
+	</data>
+	<data name="lblAllFiles.Text">
+		<value>Include All Files</value>
+	</data>
+	<data name="lblAllFiles.Help">
+		<value>Checking this will insert a category named All Items that will allow a user to see all items regardless of the category they are assigned to</value>
+	</data>
+	<data name="AllowAllFiles.Text">
+		<value>Include 'All Items' category</value>
+	</data>
+	<data name="plFolders.Help">
+		<value>Enter the location where you would like the Repository module to store uploaded files.</value>
+	</data>
+</root>

@@ -1,0 +1,42 @@
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              BTBRandomImage               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+ALTER TABLE {databaseOwner}[{objectQualifier}BTBRandomImage] DROPCONSTRAINT [FK_{objectQualifier}BTBRandomImage_Modules]
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}BTBRandomImage] DROP CONSTRAINT [PK_{objectQualifier}BTBRandomImage]
+GO
+
+drop table {databaseOwner}[{objectQualifier}BTBRandomImage]
+GO
+
+
+drop procedure {databaseOwner}[{objectQualifier}BTBRandomImageAdd]
+GO
+
+
+drop procedure {databaseOwner}[{objectQualifier}BTBRandomImageDelete]
+GO
+
+
+drop procedure {databaseOwner}[{objectQualifier}BTBRandomImageGet]
+GO
+
+
+drop procedure {databaseOwner}[{objectQualifier}BTBRandomImageGetByModules]
+GO
+
+
+drop procedure {databaseOwner}[{objectQualifier}BTBRandomImageList]
+GO
+
+
+drop procedure {databaseOwner}[{objectQualifier}BTBRandomImageUpdate]
+GO

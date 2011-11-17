@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plURL.Text" xml:space="preserve">
+    <value>Media</value>
+  </data>
+  <data name="plURL.Help" xml:space="preserve">
+    <value>Select a Media file</value>
+  </data>
+  <data name="plAlt.Text" xml:space="preserve">
+    <value>Alternate Text</value>
+  </data>
+  <data name="plAlt.Help" xml:space="preserve">
+    <value>Enter text that will be displayed by browsers that are not able to display the Media</value>
+  </data>
+  <data name="valAltText.ErrorMessage" xml:space="preserve">
+    <value>&lt;br /&gt;Alternate text is required.</value>
+  </data>
+  <data name="valWidth.ErrorMessage" xml:space="preserve">
+    <value>&lt;br /&gt;Width must be a valid integer. Only numbers are allowed.</value>
+  </data>
+  <data name="valHeight.ErrorMessage" xml:space="preserve">
+    <value>&lt;br /&gt;Height must be a valid integer. Only numbers are allowed.</value>
+  </data>
+  <data name="plWidth.Text" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="plWidth.Help" xml:space="preserve">
+    <value>Enter a width (in pixels) for the Media. Required for videos to render properly.</value>
+  </data>
+  <data name="plHeight.Text" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="plHeight.Help" xml:space="preserve">
+    <value>Enter a height (in pixels) for the Media. Required for videos to render properly.</value>
+  </data>
+  <data name="plNavigateUrl.Text" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="plNavigateUrl.Help" xml:space="preserve">
+    <value>Specify a URL to link to, if desired (Note: The link setting is only applicable to image types; other media types are not supported)</value>
+  </data>
+  <data name="ModuleHelp.Text" xml:space="preserve">
+    <value>&lt;h1&gt;About The Media Module&lt;/h1&gt;
+
+&lt;p&gt;The Media Module renders media from a relative or absolute URL.  The media file does not need to reside on the host system. Height and width attributes for the media can be entered, which provides adjustment of the media dimensions.  Alternative text is mandatory.&lt;/p&gt;
+
+&lt;h2&gt;Edit Media Options&lt;/h2&gt;
+
+&lt;ol&gt;&lt;li&gt;Add an &lt;b&gt;Media&lt;/b&gt; module, or go to an existing &lt;b&gt;Media&lt;/b&gt; module.&lt;/li&gt;
+&lt;li&gt;Click &lt;b&gt;Edit Media Options&lt;/b&gt;.
+&lt;li&gt;At &lt;b&gt;Media&lt;/b&gt;, select the &lt;b&gt;media&lt;/b&gt; or click &lt;b&gt;Upload New File&lt;/b&gt;.
+&lt;li&gt;At &lt;b&gt;Alternate Text&lt;/b&gt;, enter the text to be displayed on media mouse over.
+&lt;li&gt;Click &lt;b&gt;Update&lt;/b&gt;.&lt;/ol&gt;</value>
+  </data>
+  <data name="ControlTitle_edit.Text" xml:space="preserve">
+    <value>Edit Media</value>
+  </data>
+  <data name="UseModuleSettings.Text" xml:space="preserve">
+    <value>Use Module Settings Value</value>
+  </data>
+  <data name="None.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Left.Text" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Center.Text" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="Right.Text" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="plAlignment.Text" xml:space="preserve">
+    <value>Media Alignment</value>
+  </data>
+  <data name="plAlignment.Help" xml:space="preserve">
+    <value>Use this setting for better control over the alignment of the media.</value>
+  </data>
+  <data name="lblAutoStart.Help" xml:space="preserve">
+    <value>Automatically start videos when the page loads.</value>
+  </data>
+  <data name="lblAutoStart.Text" xml:space="preserve">
+    <value>Auto-Start Videos</value>
+  </data>
+  <data name="lblImagesOnly.Text" xml:space="preserve">
+    <value>Only Images Use the Following Settings:</value>
+  </data>
+  <data name="lblLoop.Help" xml:space="preserve">
+    <value>Loop videos when they complete.</value>
+  </data>
+  <data name="lblLoop.Text" xml:space="preserve">
+    <value>Loop Videos</value>
+  </data>
+  <data name="lblVideosOnly.Text" xml:space="preserve">
+    <value>Only Videos and Flash Use the Following Settings:</value>
+  </data>
+  <data name="VideoDimsRequired.Text" xml:space="preserve">
+    <value>Required for videos to render properly.</value>
+  </data>
+</root>

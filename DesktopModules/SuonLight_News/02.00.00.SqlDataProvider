@@ -1,0 +1,210 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Create Table **/
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_News_Comment]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	BEGIN
+		CREATE TABLE {databaseOwner}[{objectQualifier}SuonLight_News_Comment]
+		(
+			[ModuleID] [int] NOT NULL,
+			[ID] [int] NOT NULL IDENTITY(1, 1),
+			[Content] [ntext] NOT NULL,
+			[CreatedByUser] [int] NOT NULL,
+			[CreatedDate] [datetime] NOT NULL,
+			[NewsID] [int] NOT NULL,
+			[ParentID] [int]						
+		)
+
+		ALTER TABLE {databaseOwner}[{objectQualifier}SuonLight_News_Comment] ADD CONSTRAINT [PK_{objectQualifier}SuonLight_News_Comment] PRIMARY KEY CLUSTERED  ([ID])
+		CREATE NONCLUSTERED INDEX [IX_{objectQualifier}SuonLight_News_Comment] ON {databaseOwner}[{objectQualifier}SuonLight_News_Comment] ([ModuleID])
+
+		ALTER TABLE {databaseOwner}[{objectQualifier}SuonLight_News_Comment] WITH NOCHECK ADD CONSTRAINT [FK_{objectQualifier}SuonLight_News_Comment_{objectQualifier}Modules] FOREIGN KEY ([ModuleID]) REFERENCES {databaseOwner}[{objectQualifier}Modules] ([ModuleID]) ON DELETE CASCADE NOT FOR REPLICATION
+	END
+GO
+
+
+/** Drop Existing Stored Procedures **/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_GetComments]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_GetComments
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_GetComment]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_GetComment
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_GetChildComment]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_GetChildComment
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_AddComment]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_AddComment
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_RelyComment]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_RelyComment
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_UpdateComment]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_UpdateComment
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}SuonLight_DeleteComment]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}SuonLight_DeleteComment
+GO
+
+/** Create Stored Procedures **/
+
+
+create procedure {databaseOwner}{objectQualifier}SuonLight_GetComments 
+
+	@NewsId int 
+
+as
+
+select ModuleId,
+       Id,
+       Content,
+       CreatedByUser,
+       NewsID,
+       {objectQualifier}SuonLight_News_Comment.CreatedDate,
+       {objectQualifier}SuonLight_News_Comment.CreatedByUser                  
+from {objectQualifier}SuonLight_News_Comment
+inner join {objectQualifier}Users on {objectQualifier}SuonLight_News_Comment.CreatedByUser = {objectQualifier}Users.UserId
+where  NewsId = @NewsId 
+and ParentId IS NULL
+GO
+
+create procedure {databaseOwner}{objectQualifier}SuonLight_GetComment
+	
+        @Id int
+
+as
+
+select ModuleId,
+       Id,
+       Content,
+       CreatedByUser,
+       NewsID,
+       {objectQualifier}SuonLight_News_Comment.CreatedDate,
+       {objectQualifier}SuonLight_News_Comment.CreatedByUser 
+from {objectQualifier}SuonLight_News_Comment
+inner join {objectQualifier}Users on {objectQualifier}SuonLight_News_Comment.CreatedByUser = {objectQualifier}Users.UserId
+where Id = @Id
+GO
+
+create procedure {databaseOwner}{objectQualifier}SuonLight_GetChildComment
+	
+    @ParentId int
+
+as
+
+select ModuleId,
+       Id,
+       Content,
+       CreatedByUser,
+       NewsID,
+       {objectQualifier}SuonLight_News_Comment.CreatedDate,       
+       {objectQualifier}SuonLight_News_Comment.CreatedByUser
+from {objectQualifier}SuonLight_News_Comment
+inner join {objectQualifier}Users on {objectQualifier}SuonLight_News_Comment.CreatedByUser = {objectQualifier}Users.UserId
+where ParentId = @ParentId
+GO
+
+
+create procedure {databaseOwner}{objectQualifier}SuonLight_AddComment
+
+	@ModuleId       int,
+	@Content        ntext,
+	@UserID         int,
+	@NewsID			int
+
+as
+
+insert into {objectQualifier}SuonLight_News_Comment (
+	ModuleId,
+	Content,
+	CreatedByUser,
+	CreatedDate,
+	NewsID
+) 
+values (
+	@ModuleId,
+	@Content,
+	@UserID,
+	getdate(),
+	@NewsID
+)
+
+GO
+
+create procedure {databaseOwner}{objectQualifier}SuonLight_RelyComment
+
+	@ModuleId       int,
+	@ParentId		int,
+	@Content        ntext,
+	@UserID         int,
+	@NewsID			int	
+
+as
+
+insert into {objectQualifier}SuonLight_News_Comment (
+	ModuleId,
+	Content,
+	CreatedByUser,
+	CreatedDate,
+	ParentId,
+	NewsID
+) 
+values (
+	@ModuleId,
+	@Content,
+	@UserID,
+	getdate(),
+	@ParentId,
+	@NewsID	
+)
+
+GO
+
+create procedure {databaseOwner}{objectQualifier}SuonLight_UpdateComment
+	
+    @Id         int,
+	@Content        ntext,
+	@UserID         int,
+	@NewsID			int
+
+as
+
+update {objectQualifier}SuonLight_News_Comment
+set    Content       = @Content,
+       CreatedByUser = @UserID,
+       CreatedDate   = getdate(),
+       NewsID = @NewsID
+where  Id = @Id
+
+GO
+
+create procedure {databaseOwner}{objectQualifier}SuonLight_DeleteComment
+        @Id         int
+as
+
+delete
+from   {objectQualifier}SuonLight_News_Comment
+where Id = @Id OR ParentId = @Id
+
+GO
+
+
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/
