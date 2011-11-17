@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="daa" EntityNamespace="DAA" ContextNamespace="DAA" Class="DAADataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\;AttachDbFilename=|DataDirectory|daa_uit_2011.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SiteSqlServer" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.FramePro" Member="FramePros">
+    <Type Name="FramePro">
+      <Column Name="Ace" Type="System.String" DbType="NVarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SubID" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="Ord" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SubNm" Type="System.String" DbType="NVarChar(65)" CanBeNull="true" />
+      <Column Name="Regedits" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Thoer" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Prac" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Term" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Typ" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="OrdTerm" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Lecturer" Member="Lecturers">
+    <Type Name="Lecturer">
+      <Column Name="LecId" Type="System.String" DbType="NVarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LecNm" Type="System.String" DbType="NVarChar(55)" CanBeNull="true" />
+      <Column Name="BDay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Native" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="APost" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="SPost" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="OPost" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="IdNum" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="Account" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="AtBank" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="TaxCode" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Office" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Dept" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="Memo" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mark" Member="Marks">
+    <Type Name="Mark">
+      <Column Name="StuId" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SubId" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Term" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AYear" Type="System.String" DbType="NVarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Mark" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Mark0" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Student_Mark" Member="Student" ThisKey="StuId" OtherKey="StuId" Type="Student" IsForeignKey="true" />
+      <Association Name="Subject_Mark" Member="Subject" ThisKey="SubId" OtherKey="SubId" Type="Subject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ScheduleM" Member="ScheduleMs">
+    <Type Name="ScheduleM">
+      <Column Name="ClassID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SubId" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="LecNm" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Period" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Day" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Room" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="StuMx" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CurNm" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Suggest" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isAdded" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="isClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="ScheduleM_RegisterInfo" Member="RegisterInfos" ThisKey="ClassID" OtherKey="ClassID" Type="RegisterInfo" />
+      <Association Name="Subject_ScheduleM" Member="Subject" ThisKey="SubId" OtherKey="SubId" Type="Subject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="StuId" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StuNm" Type="System.String" DbType="NVarChar(55)" CanBeNull="true" />
+      <Column Name="BDay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Native" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EYear" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EClass" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="Dept" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="Degree" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Idnum" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="Account" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="Amark0" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Amark1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Amark2" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Amark3" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Memo" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ToTal" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Student_RegisterInfo" Member="RegisterInfos" ThisKey="StuId" OtherKey="StuId" Type="RegisterInfo" />
+      <Association Name="Student_Mark" Member="Marks" ThisKey="StuId" OtherKey="StuId" Type="Mark" />
+      <Association Name="Student_SuggestionInfo" Member="SuggestionInfos" ThisKey="StuId" OtherKey="StuID" Type="SuggestionInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Subject" Member="Subjects">
+    <Type Name="Subject">
+      <Column Name="SubId" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SubNm" Type="System.String" DbType="NVarChar(55)" CanBeNull="true" />
+      <Column Name="Credits" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="typ" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="Subject_ScheduleM" Member="ScheduleMs" ThisKey="SubId" OtherKey="SubId" Type="ScheduleM" />
+      <Association Name="Subject_SuggestClass" Member="SuggestClasses" ThisKey="SubId" OtherKey="SubId" Type="SuggestClass" />
+      <Association Name="Subject_RegisterInfo" Member="RegisterInfos" ThisKey="SubId" OtherKey="SubId" Type="RegisterInfo" />
+      <Association Name="Subject_Mark" Member="Marks" ThisKey="SubId" OtherKey="SubId" Type="Mark" />
+      <Association Name="Subject_SubInfo" Member="SubInfos" ThisKey="SubId" OtherKey="ParaSubId" Type="SubInfo" />
+      <Association Name="Subject_SubInfo1" Member="SubInfos1" ThisKey="SubId" OtherKey="PreSubId" Type="SubInfo" />
+      <Association Name="Subject_SubInfo2" Member="SubInfos2" ThisKey="SubId" OtherKey="ReSubId" Type="SubInfo" />
+      <Association Name="Subject_SubInfo3" Member="SubInfos3" ThisKey="SubId" OtherKey="SubId" Type="SubInfo" />
+      <Association Name="Subject_SuggestionInfo" Member="SuggestionInfos" ThisKey="SubId" OtherKey="SubId" Type="SuggestionInfo" />
+    </Type>
+  </Table>
+  <Table Name="tssdhuit.SuggestClass" Member="SuggestClasses">
+    <Type Name="SuggestClass">
+      <Column Name="ClassID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SubId" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="LecNm" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Period" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Day" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Room" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="StuMx" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CurNm" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="Subject_SuggestClass" Member="Subject" ThisKey="SubId" OtherKey="SubId" Type="Subject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegisterInfo" Member="RegisterInfos">
+    <Type Name="RegisterInfo">
+      <Column Name="StuId" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClassID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SubId" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ReReg" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Association Name="ScheduleM_RegisterInfo" Member="ScheduleM" ThisKey="ClassID" OtherKey="ClassID" Type="ScheduleM" IsForeignKey="true" />
+      <Association Name="Student_RegisterInfo" Member="Student" ThisKey="StuId" OtherKey="StuId" Type="Student" IsForeignKey="true" />
+      <Association Name="Subject_RegisterInfo" Member="Subject" ThisKey="SubId" OtherKey="SubId" Type="Subject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SubGroup" Member="SubGroups">
+    <Type Name="SubGroup">
+      <Column Name="GroupId" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Info" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="SubGroup_SubInfo" Member="SubInfos" ThisKey="GroupId" OtherKey="GroupId" Type="SubInfo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SubInfo" Member="SubInfos">
+    <Type Name="SubInfo">
+      <Column Name="SubId" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PreSubId" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ParaSubId" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="ReSubId" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="GroupId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="typ" Type="System.Int16" DbType="SmallInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="SubGroup_SubInfo" Member="SubGroup" ThisKey="GroupId" OtherKey="GroupId" Type="SubGroup" IsForeignKey="true" />
+      <Association Name="Subject_SubInfo" Member="Subject" ThisKey="ParaSubId" OtherKey="SubId" Type="Subject" IsForeignKey="true" />
+      <Association Name="Subject_SubInfo1" Member="Subject1" ThisKey="PreSubId" OtherKey="SubId" Type="Subject" IsForeignKey="true" />
+      <Association Name="Subject_SubInfo2" Member="Subject2" ThisKey="ReSubId" OtherKey="SubId" Type="Subject" IsForeignKey="true" />
+      <Association Name="Subject_SubInfo3" Member="Subject3" ThisKey="SubId" OtherKey="SubId" Type="Subject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuggestionInfo" Member="SuggestionInfos">
+    <Type Name="SuggestionInfo">
+      <Column Name="StuID" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SubId" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Student_SuggestionInfo" Member="Student" ThisKey="StuID" OtherKey="StuId" Type="Student" IsForeignKey="true" />
+      <Association Name="Subject_SuggestionInfo" Member="Subject" ThisKey="SubId" OtherKey="SubId" Type="Subject" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
