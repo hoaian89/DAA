@@ -1,0 +1,291 @@
+<QLTSSDHv2>
+  <TuyenSinh>
+    <MaTS>01</MaTS>
+    <NamThi>2010</NamThi>
+    <NganhTuyenSinh>Khoa học máy tính</NganhTuyenSinh>
+    <ThoiGianThi>23-24/10/2010</ThoiGianThi>
+    <TG_BatDau>2010-08-05T00:00:00-07:00</TG_BatDau>
+    <TG_KetThuc>2010-09-15T00:00:00-07:00</TG_KetThuc>
+    <KhoaCH>05</KhoaCH>
+    <ChiTieuCH>50</ChiTieuCH>
+    <LePhiCH>50</LePhiCH>
+    <LePhiAVCH>100</LePhiAVCH>
+    <DiemAVCH>5</DiemAVCH>
+    <Mon1>Mon02</Mon1>
+    <LePhi1>100</LePhi1>
+    <Diem1>5</Diem1>
+    <Mon2>Mon03</Mon2>
+    <LePhi2>100</LePhi2>
+    <Diem2>5</Diem2>
+    <KhoaNCS>04</KhoaNCS>
+    <ChiTieuNCS>3</ChiTieuNCS>
+    <LePhiNCS>50</LePhiNCS>
+    <LePhiAVNCS>100</LePhiAVNCS>
+    <DiemAVNCS>5</DiemAVNCS>
+    <LePhiDCNCS>700</LePhiDCNCS>
+    <DiemDCNCS>5</DiemDCNCS>
+  </TuyenSinh>
+  <MonThi>
+    <MaMT>Mon01</MaMT>
+    <TenMT>Anh văn</TenMT>
+  </MonThi>
+  <MonThi>
+    <MaMT>Mon02</MaMT>
+    <TenMT>Tin học cơ sở</TenMT>
+  </MonThi>
+  <MonThi>
+    <MaMT>Mon03</MaMT>
+    <TenMT>Toán cho máy tính</TenMT>
+  </MonThi>
+  <MonThi>
+    <MaMT>Mon04</MaMT>
+    <TenMT>Bảo vệ đề cương nghiên cứu</TenMT>
+  </MonThi>
+  <Nganh>
+    <MaNganh>N01</MaNganh>
+    <TenNganh>Công Nghệ Thông Tin</TenNganh>
+    <BoTuc>false</BoTuc>
+  </Nganh>
+  <Nganh>
+    <MaNganh>N02</MaNganh>
+    <TenNganh>Tin học - kinh tế</TenNganh>
+    <BoTuc>true</BoTuc>
+  </Nganh>
+  <Nganh>
+    <MaNganh>N03</MaNganh>
+    <TenNganh>Tin học quản lý</TenNganh>
+    <BoTuc>true</BoTuc>
+  </Nganh>
+  <Nganh>
+    <MaNganh>N04</MaNganh>
+    <TenNganh>Tin học môi trường</TenNganh>
+    <BoTuc>true</BoTuc>
+  </Nganh>
+  <Nganh>
+    <MaNganh>N05</MaNganh>
+    <TenNganh>Điện tử</TenNganh>
+    <BoTuc>true</BoTuc>
+  </Nganh>
+  <Nganh>
+    <MaNganh>N06</MaNganh>
+    <TenNganh>Điện tử viễn thông</TenNganh>
+    <BoTuc>true</BoTuc>
+  </Nganh>
+  <Nganh>
+    <MaNganh>N07</MaNganh>
+    <TenNganh>Tự động hóa</TenNganh>
+    <BoTuc>true</BoTuc>
+  </Nganh>
+  <Nganh>
+    <MaNganh>N08</MaNganh>
+    <TenNganh>Toán</TenNganh>
+    <BoTuc>true</BoTuc>
+  </Nganh>
+  <Nganh>
+    <MaNganh>N09</MaNganh>
+    <TenNganh>Toán tin</TenNganh>
+    <BoTuc>true</BoTuc>
+  </Nganh>
+  <Nganh>
+    <MaNganh>N10</MaNganh>
+    <TenNganh>Kỹ thuật máy tính</TenNganh>
+    <BoTuc>false</BoTuc>
+  </Nganh>
+  <Nganh>
+    <MaNganh>N11</MaNganh>
+    <TenNganh>Khoa học máy tính</TenNganh>
+    <BoTuc>false</BoTuc>
+  </Nganh>
+  <Nganh>
+    <MaNganh>N12</MaNganh>
+    <TenNganh>Mạng máy tính</TenNganh>
+    <BoTuc>false</BoTuc>
+  </Nganh>
+  <Nganh>
+    <MaNganh>N13</MaNganh>
+    <TenNganh>Công nghệ phần mềm</TenNganh>
+    <BoTuc>false</BoTuc>
+  </Nganh>
+  <Nganh>
+    <MaNganh>N14</MaNganh>
+    <TenNganh>Hệ thống thông tin	</TenNganh>
+    <BoTuc>false</BoTuc>
+  </Nganh>
+  <CumThi>
+    <MaCT>01</MaCT>
+    <TenCT>Thành phố Hồ Chí Minh</TenCT>
+  </CumThi>
+  <CumThi>
+    <MaCT>02</MaCT>
+    <TenCT>Hà Nội</TenCT>
+  </CumThi>
+  <CumThi>
+    <MaCT>03</MaCT>
+    <TenCT>Đà Nẵng</TenCT>
+  </CumThi>
+  <NgoaiNgu>
+    <MaNN>NN01</MaNN>
+    <TenNN>TOEFL ITP</TenNN>
+    <DiemMienThiCH>400</DiemMienThiCH>
+    <DiemMienThiNCS>450</DiemMienThiNCS>
+    <TGHieuLuc>2</TGHieuLuc>
+  </NgoaiNgu>
+  <NgoaiNgu>
+    <MaNN>NN02</MaNN>
+    <TenNN>TOEFL iBT</TenNN>
+    <DiemMienThiCH>32</DiemMienThiCH>
+    <DiemMienThiNCS>45</DiemMienThiNCS>
+    <TGHieuLuc>2</TGHieuLuc>
+  </NgoaiNgu>
+  <NgoaiNgu>
+    <MaNN>NN03</MaNN>
+    <TenNN>IELTS</TenNN>
+    <DiemMienThiCH>4.5</DiemMienThiCH>
+    <DiemMienThiNCS>5</DiemMienThiNCS>
+    <TGHieuLuc>2</TGHieuLuc>
+  </NgoaiNgu>
+  <NgoaiNgu>
+    <MaNN>NN04</MaNN>
+    <TenNN>Học đại học nước ngoài</TenNN>
+    <DiemMienThiCH>-1</DiemMienThiCH>
+    <DiemMienThiNCS>-1</DiemMienThiNCS>
+    <TGHieuLuc>-1</TGHieuLuc>
+  </NgoaiNgu>
+  <NgoaiNgu>
+    <MaNN>NN05</MaNN>
+    <TenNN>Cử nhân chuyên ngành Anh văn</TenNN>
+    <DiemMienThiCH>-1</DiemMienThiCH>
+    <DiemMienThiNCS>-1</DiemMienThiNCS>
+    <TGHieuLuc>-1</TGHieuLuc>
+  </NgoaiNgu>
+  <GiayTo>
+    <MaGT>GT01</MaGT>
+    <TenGT>Đơn xin dự tuyển</TenGT>
+    <CH>true</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT02</MaGT>
+    <TenGT>Sơ yếu lý lịch</TenGT>
+    <CH>true</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT03</MaGT>
+    <TenGT>Bản sao bằng tốt nghiệp đại học (có sao y)</TenGT>
+    <CH>true</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT04</MaGT>
+    <TenGT>Bản sao bảng điểm đại học (có sao y)</TenGT>
+    <CH>true</CH>
+    <NCS>false</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT05</MaGT>
+    <TenGT>Công văn cử đi thi của Thủ trưởng cơ quan quản lý</TenGT>
+    <CH>true</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT06</MaGT>
+    <TenGT>Bản sao quyết định tuyển dụng hoặc hợp đồng lao động</TenGT>
+    <CH>true</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT07</MaGT>
+    <TenGT>Giấy xác nhận bổ túc kiến thức</TenGT>
+    <CH>true</CH>
+    <NCS>false</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT08</MaGT>
+    <TenGT>Giấy chứng nhận miễn ngoại ngữ</TenGT>
+    <CH>true</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT09</MaGT>
+    <TenGT>Phiếu khám sức khỏe</TenGT>
+    <CH>true</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT10</MaGT>
+    <TenGT>Diện chính sách</TenGT>
+    <CH>true</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT11</MaGT>
+    <TenGT>2 tấm hình 3x4 (ghi rõ họ tên, ngày sinh)</TenGT>
+    <CH>true</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT12</MaGT>
+    <TenGT>2 phong bì (dán tem và ghi sẵn địa chỉ người nhận)</TenGT>
+    <CH>true</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT13</MaGT>
+    <TenGT>Bản sao bằng tốt nghiệp Thạc sĩ (có sao y)</TenGT>
+    <CH>false</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT14</MaGT>
+    <TenGT>Bản sao bảng điểm Cao học (có sao y)</TenGT>
+    <CH>false</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT15</MaGT>
+    <TenGT>Đề cương nghiên cứu (sao ra 5 bản)</TenGT>
+    <CH>false</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT16</MaGT>
+    <TenGT>Giấy đồng ý của cán bộ hướng dẫn</TenGT>
+    <CH>false</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT17</MaGT>
+    <TenGT>Bản sao (các) Công trình nghiên cứu</TenGT>
+    <CH>false</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT18</MaGT>
+    <TenGT>Bản sao (các) Bài báo</TenGT>
+    <CH>false</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <GiayTo>
+    <MaGT>GT19</MaGT>
+    <TenGT>Thư giới thiệu</TenGT>
+    <CH>false</CH>
+    <NCS>true</NCS>
+  </GiayTo>
+  <UuTien>
+    <MaUT>UT01</MaUT>
+    <TenUT>Anh hùng lực lượng vũ trang, anh hùng lao động</TenUT>
+  </UuTien>
+  <UuTien>
+    <MaUT>UT02</MaUT>
+    <TenUT>Thương binh, người hưởng chính sách thương binh</TenUT>
+  </UuTien>
+  <UuTien>
+    <MaUT>UT03</MaUT>
+    <TenUT>Người thuộc dân tộc ít người</TenUT>
+  </UuTien>
+  <UuTien>
+    <MaUT>UT04</MaUT>
+    <TenUT>Ðang công tác liên tục 2 năm trở lên tại vùng cao, miền núi, hải đảo,vùng sâu tính đến ngày nộp hồ sơ dự thi</TenUT>
+  </UuTien>
+</QLTSSDHv2>
